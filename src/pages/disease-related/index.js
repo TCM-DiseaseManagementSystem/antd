@@ -86,6 +86,7 @@ const data2= [
     },
 ];
 
+
 const EditableRow = ({ form, index, ...props }) => (
     <EditableContext.Provider value={form}>
         <tr {...props} />
@@ -212,6 +213,7 @@ export default class Content extends React.Component {
                 }],
             data1:data1,
             data2:data2,
+            data3:data2,
             count: 2,
             loading: false,
             modal1Visible: false,
@@ -282,7 +284,8 @@ export default class Content extends React.Component {
                                             <span>未关联证型</span>
                                             <Search
                                                 placeholder="根据疾病名称或疾病拼音搜索证型"
-                                                onSearch={value => console.log(value)}
+                                                onSearch={value => this.search(value)}
+                                                onChange={value=>this.search(value)}
                                                 style={{ width: 260, marginLeft: 240 }}
                                             />
                                         </div>
@@ -372,25 +375,40 @@ export default class Content extends React.Component {
     //添加关联证型
     addDiease=(row)=>{
         let data3=this.state.data1
+        let data4=this.state.data3
         let repeat =true
         data3.map(data=>{
             if (data.key ===row.key){
                 repeat =false
             }
         })
+        data4=data4.filter(item=>{
+            return item.key !==row.key
+        })
+
          if (repeat){
              data3.splice(data3.length,0,row)
          }
         this.setState({
-            data1:data3
+            data1:data3,
+            data2:data4,
+            data3:data4
         })
+
     }
 
 
     //删除关联证型
     handleDeleteDisease=(key)=>{
         const dataA = [...this.state.data1];
-        this.setState({ data1: dataA.filter(item => item.key !== key.key) });
+        const dataB=[...this.state.data3]
+        dataB.splice(0,0,key)
+        this.setState({
+            data1: dataA.filter(item => item.key !== key.key),
+            data2:dataB,
+            data3:dataB
+        });
+        {console.log("@111",this.state.data2)}
 }
 
     //显示增加疾病Modal
@@ -491,6 +509,40 @@ export default class Content extends React.Component {
         });
         this.setState({ dataSource: newData });
     };
+
+    //搜索
+    search=(value)=>{
+        const dataB=this.state.data2
+        const dataC=this.state.data3
+        // dataB.filter(item=>{
+        //
+        // })
+        let flag=false
+        if (value!==''){
+            dataC.map((data)=>{
+                if (data.name===value) {
+                    flag=true
+                }
+            })
+            if (flag){
+                this.setState({
+                    data2:dataB.filter(item=>{
+                        return item.name === value
+                    })
+                })
+            }else {
+                this.setState({
+                    data2:dataC
+                })
+            }
+        } else {
+            this.setState({
+                data2:dataC
+            })
+        }
+
+        console.log('@value',value)
+    }
 
     render() {
         const { dataSource, selectedRowKeys } = this.state;
