@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-export default class HistoryDetail extends Component{
-    constructor(props){
+export default class Diagnosis extends Component{
+    constructor(props) {
         super(props);
     }
 
     render() {
-        return (
+        return(
             <div>
                 <div>主诉：</div>
                 <div>现病史:</div>

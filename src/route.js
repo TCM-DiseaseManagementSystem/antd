@@ -10,6 +10,10 @@ import Edit from './pages/edit/index';
 import UserInfo from './pages/userinfo/index';
 import History from './pages/history/index';
 import HistoryDetail from './pages/history-detail/index';
+import Diagnosis from './pages/diagnosis/index';
+import Cognition from './pages/cognition/index';
+import MMSE from './pages/mmse/index';
+import MOCA from './pages/moca/index';
 import NoMatch from './pages/nomatch/nomatch';
 
 export default class Router extends React.Component{
@@ -28,6 +32,10 @@ export default class Router extends React.Component{
                                     <Route exact path="/admin/userinfo" component={UserInfo} />
                                     <Route exact path="/history" component={History} />
                                     <Route exact path="/historyDetail" component={HistoryDetail} />
+                                    <Route exact path="/diagnosis" component={Diagnosis} />
+                                    <Route exact path="/cognition" component={Cognition} />
+                                    <Route exact path="/mmse" component={MMSE} />
+                                    <Route exact path="/moca" component={MOCA} />
                                     <Route component={NoMatch}/>
                                 </Switch>
                             </Admin>
