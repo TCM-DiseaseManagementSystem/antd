@@ -4,8 +4,12 @@ const menuList = [
         key: '/admin/disease',
     },
     {
-        title: '问卷管理',
+        title: '量表管理',
         key: '/admin/syndromeType',
+    },
+    {
+        title: '患者信息',
+        key: '/admin/userinfo',
     },
     // {
     //     title: '表单',
