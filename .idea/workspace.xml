@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbfb25a6-bb28-4f34-a777-bc3ffcad0b9f" name="Default Changelist" comment="">
+    <list default="true" id="bbfb25a6-bb28-4f34-a777-bc3ffcad0b9f" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/pages/userinfo/index.js" afterPath="$PROJECT_DIR$/src/pages/userinfo/index.js" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -262,7 +258,7 @@
       <workItem from="1550452769778" duration="6267000" />
       <workItem from="1550459286153" duration="1431000" />
       <workItem from="1550801574058" duration="13590000" />
-      <workItem from="1551316532229" duration="9688000" />
+      <workItem from="1551316532229" duration="9706000" />
     </task>
     <task id="LOCAL-00001" summary="新增患者管理和问卷管理页面">
       <created>1550802164447</created>
@@ -271,11 +267,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550802164447</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Default Changelist">
+      <created>1551336988577</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551336988577</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102894000" />
+    <option name="totallyTimeSpent" value="102912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -308,7 +311,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新增患者管理和问卷管理页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增患者管理和问卷管理页面" />
+    <MESSAGE value="Default Changelist" />
+    <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
