@@ -1,0 +1,50 @@
+ul,li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.moca-content {
+  width: calc(100% - 500px);
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+
+  .score {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .moca-content-name {
+    .moca-content-name-detail {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .moca-content-detail {
+      display: flex;
+      flex-direction: row;
+      padding: 10px 0;
+
+      .moca-content-detail-title {
+        flex: 5;
+
+        li {
+          padding: 5px;
+        }
+      }
+
+      .moca-content-detail-score {
+        flex: 1;
+
+        li {
+          color: red;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

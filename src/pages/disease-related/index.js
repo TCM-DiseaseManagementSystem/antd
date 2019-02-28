@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import {
-    Table, Input, Button, Popconfirm, Form,Modal,Row,Col
+    Table, Input, Button, Popconfirm, Form, Modal, Row, Col, Radio
 } from 'antd';
 import './index.less';
 const FormItem = Form.Item;
 const Search = Input.Search;
+const RadioGroup = Radio.Group;
 const EditableContext = React.createContext();
 
 
@@ -12,10 +13,12 @@ const data1 = [
     {
     key: 1,
     name: '感冒',
+        py: 'gm'
 },
     {
     key: 2,
     name: '慢性咽炎',
+        py: 'mxyy'
 },
 ];
 
@@ -23,66 +26,82 @@ const data2= [
     {
         key: 3,
         name: '感冒',
+        py: 'gm'
     },
     {
         key: 4,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 5,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 6,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 7,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 8,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 9,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 10,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 11,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 12,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 13,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 14,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 15,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 16,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 17,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
     {
         key: 18,
         name: '慢性咽炎',
+        py: 'mxyy'
     },
 ];
 
@@ -222,7 +241,8 @@ export default class Content extends React.Component {
             nameText: '',
             pyText: '',
             selectedRowKeys: [],
-            rowKey:null
+            rowKey:null,
+            value: 1,
         };
 
         this.columns = [
@@ -254,12 +274,19 @@ export default class Content extends React.Component {
                                 cancelText='取消'
                                 className={"form-modal1"}
                                 bodyStyle={{ padding: '32px 40px 48px' }}
+                                maskStyle={{backgroundColor:'rgba(0,0,0,.3)'}}
                                 onOk={()=>this.handleOk(this.state.rowKey)}
                                 onCancel={this.handleCancel}
                                  >
-
-                                <Input placeholder="编辑疾病名称" onChange={this.onChangeNameText} value={this.state.nameText} className={"name-input"}/>
-                                <Input placeholder="编辑疾病拼音" onChange={this.onChangePYText} value={this.state.pyText} className={"py-input"} />
+                                <Input placeholder="编辑疾病名称" onChange={this.onChangeNameText}  className={"name-input"}/>
+                                <Input placeholder="编辑疾病拼音" onChange={this.onChangePYText}  className={"py-input"} />
+                                <div className={'is-common'}>
+                                    <span className={'common'}>是否是常见病症</span>
+                                    <RadioGroup onChange={this.onChange} value={this.state.value}>
+                                        <Radio value={1}>是</Radio>
+                                        <Radio value={2}>否</Radio>
+                                    </RadioGroup>
+                                </div>
                             </Modal>
                             <Button onClick={this.setModal2Visible} className='btn'>关联证型</Button>
                             <Modal
@@ -270,6 +297,7 @@ export default class Content extends React.Component {
                                 visible={this.state.modal2Visible}
                                 onCancel={this.handleCancel}
                                 className="form-modal"
+                                maskStyle={{backgroundColor:'rgba(0,0,0,.3)'}}
                             >
                                 <Row className="breadcrumb">
                                     <Col span={12} className="breadcrumb-title">
@@ -283,10 +311,10 @@ export default class Content extends React.Component {
                                         <div  className="syndrome-title">
                                             <span>未关联证型</span>
                                             <Search
-                                                placeholder="根据疾病名称或疾病拼音搜索证型"
+                                                placeholder="根据疾病名称或疾病首字母搜索证型"
                                                 onSearch={value => this.search(value)}
                                                 onChange={value=>this.search(value)}
-                                                style={{ width: 260, marginLeft: 240 }}
+                                                style={{ width: 300, marginLeft: 200 }}
                                             />
                                         </div>
                                         <Table
@@ -311,7 +339,12 @@ export default class Content extends React.Component {
             dataIndex: 'name',
             key: 'name',
             align: 'center',
-        },{
+        }, {
+                title: '证型拼音',
+                dataIndex: 'py',
+                key: 'py',
+                align: 'center',
+            },{
             title: '操作',
             dataIndex: 'operate',
             key: 'operate',
@@ -333,6 +366,11 @@ export default class Content extends React.Component {
             key: 'name',
             align: 'center',
         },{
+                title: '证型拼音',
+                dataIndex: 'py',
+                key: 'py',
+                align: 'center',
+            },{
             title: '操作',
             dataIndex: 'operate',
             key: 'operate',
@@ -347,6 +385,13 @@ export default class Content extends React.Component {
             ),
         }];
 
+    }
+
+    onChange = (e) => {
+        console.log('radio checked', e.target.value);
+        this.setState({
+            value: e.target.value,
+        });
     }
 
     //选中记录条数
@@ -540,8 +585,6 @@ export default class Content extends React.Component {
                 data2:dataC
             })
         }
-
-        console.log('@value',value)
     }
 
     render() {
@@ -591,6 +634,13 @@ export default class Content extends React.Component {
                     >
                         <Input placeholder="请输入疾病名称" onChange={this.onChangeNameText} className={"name-input"} />
                         <Input placeholder="请输入疾病拼音" onChange={this.onChangePYText} className={"py-input"} />
+                        <div className={'is-common'}>
+                            <span className={'common'}>是否是常见病症</span>
+                            <RadioGroup onChange={this.onChange} value={this.state.value}>
+                                <Radio value={1}>是</Radio>
+                                <Radio value={2}>否</Radio>
+                            </RadioGroup>
+                        </div>
                     </Modal>
                     <Popconfirm title="确认删除?" onConfirm={() => this.handleDeleteAll(key)} okText="确认" cancelText="取消">
                         <Button

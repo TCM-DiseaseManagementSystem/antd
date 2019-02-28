@@ -1,0 +1,50 @@
+ul,li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cognition-content {
+  width: calc(100% - 900px);
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+
+  .score {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cognition-content-name {
+    .cognition-content-name-detail {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .cognition-content-detail {
+      display: flex;
+      flex-direction: row;
+      padding: 10px 0;
+
+      .cognition-content-detail-title {
+        flex: 4;
+
+        li {
+          padding: 5px;
+        }
+      }
+
+      .cognition-content-detail-score {
+        flex: 1;
+
+        li {
+          color: red;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

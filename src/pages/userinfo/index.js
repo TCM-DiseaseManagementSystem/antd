@@ -3,7 +3,7 @@ import {
     Table, Input, Button, Popconfirm, Form,Modal,Row,Col
 } from 'antd';
 import {Link} from "react-router-dom";
-// import './index.less';
+import './index.less';
 const FormItem = Form.Item;
 const Search = Input.Search;
 const EditableContext = React.createContext();
@@ -124,7 +124,7 @@ export default class UserInfo extends Component {
                 sex: '男',
                 birthday: '1989-02-21',
                 address: '四川省成都市温江区柳台大道1166号',
-                time: '2018-12-24'
+                time: '四诊数据采集 2018-12-24'
             },
                 {
                     key: '1',
@@ -133,7 +133,7 @@ export default class UserInfo extends Component {
                     sex: '男',
                     birthday: '1990-02-21',
                     address: '四川省成都市温江区柳台大道1166号',
-                    time: '2018-12-24'
+                    time: '四诊数据采集 2018-12-24'
                 },
                 {
                     key: '2',
@@ -142,7 +142,7 @@ export default class UserInfo extends Component {
                     sex: '女',
                     birthday: '1999-02-21',
                     address: '四川省成都市金牛区十二桥路37号',
-                    time: '2018-12-24'
+                    time: '四诊数据采集 2018-12-24'
                 }],
             count: 2,
             loading: false,
@@ -177,7 +177,7 @@ export default class UserInfo extends Component {
                 align: 'center'
             },
             {
-                title: '上一次操作时间',
+                title: '最近一次使用',
                 dataIndex: 'time',
                 align: 'center'
             },
@@ -188,8 +188,8 @@ export default class UserInfo extends Component {
                 render: (text, record) => (
                     this.state.dataSource.length >= 1
                         ? (
-                            <div className='operation'>
-                                <Link to="/history"><Button onClick={() => this.handleEdit}>查看</Button></Link>
+                            <div>
+                                <Link to="/history"><Button onClick={() => this.handleEdit} className={'btn'}>查看</Button></Link>
                                 <Popconfirm title="确认删除?" onConfirm={() => this.handleDelete(record.key)} okText="确认" cancelText="取消">
                                     <Button>删除</Button>
                                 </Popconfirm>

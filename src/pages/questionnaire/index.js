@@ -74,7 +74,7 @@ export  default class Index extends Component{
             width: '25%',
             align: 'center'
         }, {
-            title: '时间',
+            title: '截止时间',
             dataIndex: 'date',
             key: 'date',
             width: '25%',
