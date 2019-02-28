@@ -3,7 +3,10 @@ import {Switch,Route,HashRouter,Link} from 'react-router-dom';
 import App from './App';
 import Admin from './admin';
 import Disease from './pages/disease-related/index';
-import Questionnaire from './pages/questionnaire/index';
+import Questionnaire from './pages/cognition/question';
+import Ques from './pages/questionnaire/ques';
+import EditQues from './pages/questionnaire/edit'
+import AddQues from './pages/questionnaire/add'
 import Check from './pages/questionnaire/check/index';
 import Fill from './pages/questionnaire/fill/index';
 import Edit from './pages/questionnaire/edit/index';
@@ -24,10 +27,12 @@ export default class Router extends React.Component{
                             <Admin>
                                 <Switch>
                                     <Route path={'/admin/disease'} component={Disease}/>
-                                    <Route path={'/admin/syndromeType'} component={Questionnaire }/>
+                                    <Route path={'/admin/syndromeType'} component={Ques}/>
                                     <Route exact path="/fill" component={Fill} />
                                     <Route exact path="/check" component={Check} />
-                                    <Route exact path="/edit" component={Edit} />
+                                    <Route exact path="/edit" component={EditQues} />
+                                    <Route exact path="/add" component={AddQues} />
+
                                     <Route exact path="/admin/userinfo" component={UserInfo} />
                                     <Route exact path="/history" component={History} />
                                     <Route exact path="/diagnosis" component={Diagnosis} />

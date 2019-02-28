@@ -1,5 +1,8 @@
 @import '~antd/dist/antd.css';
 
+.container{
+  diaplay:flex
+}
 .App {
   text-align: center;
   background-color: #002140;
@@ -7,10 +10,18 @@
 .nav-left{
   height: calc(100vh);
   background-color: #001529;
+
 }
 .content{
   position: relative;
   padding: 20px;
 //background-color: white;
 //padding:20px 10px 0px 10px
+}
+
+.main {
+  flex: 1;
+  height: calc(100vh);
+  background-color: #ffffff;
+  overflow: auto;
 }
