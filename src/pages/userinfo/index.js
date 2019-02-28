@@ -3,6 +3,7 @@ import {
     Table, Input, Button, Popconfirm, Form,Modal,Row,Col
 } from 'antd';
 import {Link} from "react-router-dom";
+import $ from 'jquery';
 // import './index.less';
 const FormItem = Form.Item;
 const Search = Input.Search;
@@ -119,12 +120,12 @@ export default class UserInfo extends Component {
         this.state = {
             dataSource: [{
                 key: '0',
-                name: 'Jone',
+                Name: 'Jone',
                 age: '30',
-                sex: '男',
-                birthday: '1989-02-21',
-                address: '四川省成都市温江区柳台大道1166号',
-                time: '2018-12-24'
+                Gender: '男',
+                Born: '1989-02-21',
+                Address: '四川省成都市温江区柳台大道1166号',
+                UpdatedAt: '2018-12-24'
             },
                 {
                     key: '1',
@@ -157,28 +158,28 @@ export default class UserInfo extends Component {
         this.columns = [
             {
                 title: '姓名',
-                dataIndex: 'name',
+                dataIndex: 'Name',
                 editable: true,
                 align: 'center'
             },
             {
                 title: '性别',
-                dataIndex: 'sex',
+                dataIndex: 'Gender',
                 align: 'center'
             },
             {
                 title: '出生日期',
-                dataIndex: 'birthday',
+                dataIndex: 'Born',
                 align: 'center'
             },
             {
                 title: '家庭地址',
-                dataIndex: 'address',
+                dataIndex: 'Address',
                 align: 'center'
             },
             {
                 title: '上一次操作时间',
-                dataIndex: 'time',
+                dataIndex: 'UpdatedAt',
                 align: 'center'
             },
             {
@@ -306,6 +307,23 @@ export default class UserInfo extends Component {
         this.setState({ dataSource: newData });
     };
 
+    searchRespondent = key => {
+        let set =(data)=> {
+            this.setState({dataSource:data.Data})
+        };
+        $.ajax({
+            type:"GET",
+            url:"http://localhost:5010/visit/get/GetByKey",
+            data:{key:key},
+            dataType:"Json",
+            success:function (data) {
+                set(data)
+            },
+            async:true
+        })
+
+    };
+
     render() {
         const { dataSource, selectedRowKeys } = this.state;
         const key = dataSource.key;
@@ -365,12 +383,13 @@ export default class UserInfo extends Component {
                      {hasSelected ? `选中 ${selectedRowKeys.length} 条记录` : ''}
                      </span>
                     <Search
+                        id = {"search_1"}
                         placeholder="根据姓名查询患者"
-                        onSearch={value => console.log(value)}
+                        onSearch={value => this.searchRespondent(value)}
                         style={{ width: 400, marginLeft: 900 }}
                     />
                 </div>
-                <Table
+                <Table id={"table_1"}
                     components={components}
                     rowSelection={rowSelection}
                     rowClassName={() => 'editable-row'}
