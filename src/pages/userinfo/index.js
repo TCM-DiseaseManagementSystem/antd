@@ -3,8 +3,7 @@ import {
     Table, Input, Button, Popconfirm, Form,Modal,Row,Col
 } from 'antd';
 import {Link} from "react-router-dom";
-import $ from 'jquery';
-// import './index.less';
+import './index.less';
 const FormItem = Form.Item;
 const Search = Input.Search;
 const EditableContext = React.createContext();
@@ -120,12 +119,12 @@ export default class UserInfo extends Component {
         this.state = {
             dataSource: [{
                 key: '0',
-                Name: 'Jone',
+                name: 'Jone',
                 age: '30',
-                Gender: '男',
-                Born: '1989-02-21',
-                Address: '四川省成都市温江区柳台大道1166号',
-                UpdatedAt: '2018-12-24'
+                sex: '男',
+                birthday: '1989-02-21',
+                address: '四川省成都市温江区柳台大道1166号',
+                time: '四诊数据采集 2018-12-24'
             },
                 {
                     key: '1',
@@ -134,7 +133,7 @@ export default class UserInfo extends Component {
                     sex: '男',
                     birthday: '1990-02-21',
                     address: '四川省成都市温江区柳台大道1166号',
-                    time: '2018-12-24'
+                    time: '四诊数据采集 2018-12-24'
                 },
                 {
                     key: '2',
@@ -143,7 +142,7 @@ export default class UserInfo extends Component {
                     sex: '女',
                     birthday: '1999-02-21',
                     address: '四川省成都市金牛区十二桥路37号',
-                    time: '2018-12-24'
+                    time: '四诊数据采集 2018-12-24'
                 }],
             count: 2,
             loading: false,
@@ -158,28 +157,28 @@ export default class UserInfo extends Component {
         this.columns = [
             {
                 title: '姓名',
-                dataIndex: 'Name',
+                dataIndex: 'name',
                 editable: true,
                 align: 'center'
             },
             {
                 title: '性别',
-                dataIndex: 'Gender',
+                dataIndex: 'sex',
                 align: 'center'
             },
             {
                 title: '出生日期',
-                dataIndex: 'Born',
+                dataIndex: 'birthday',
                 align: 'center'
             },
             {
                 title: '家庭地址',
-                dataIndex: 'Address',
+                dataIndex: 'address',
                 align: 'center'
             },
             {
-                title: '上一次操作时间',
-                dataIndex: 'UpdatedAt',
+                title: '最近一次使用',
+                dataIndex: 'time',
                 align: 'center'
             },
             {
@@ -189,8 +188,8 @@ export default class UserInfo extends Component {
                 render: (text, record) => (
                     this.state.dataSource.length >= 1
                         ? (
-                            <div className='operation'>
-                                <Link to="/history"><Button onClick={() => this.handleEdit}>查看</Button></Link>
+                            <div>
+                                <Link to="/history"><Button onClick={() => this.handleEdit} className={'btn'}>查看</Button></Link>
                                 <Popconfirm title="确认删除?" onConfirm={() => this.handleDelete(record.key)} okText="确认" cancelText="取消">
                                     <Button>删除</Button>
                                 </Popconfirm>
@@ -307,23 +306,6 @@ export default class UserInfo extends Component {
         this.setState({ dataSource: newData });
     };
 
-    searchRespondent = key => {
-        let set =(data)=> {
-            this.setState({dataSource:data.Data})
-        };
-        $.ajax({
-            type:"GET",
-            url:"http://localhost:5010/visit/get/GetByKey",
-            data:{key:key},
-            dataType:"Json",
-            success:function (data) {
-                set(data)
-            },
-            async:true
-        })
-
-    };
-
     render() {
         const { dataSource, selectedRowKeys } = this.state;
         const key = dataSource.key;
@@ -383,13 +365,12 @@ export default class UserInfo extends Component {
                      {hasSelected ? `选中 ${selectedRowKeys.length} 条记录` : ''}
                      </span>
                     <Search
-                        id = {"search_1"}
                         placeholder="根据姓名查询患者"
-                        onSearch={value => this.searchRespondent(value)}
+                        onSearch={value => console.log(value)}
                         style={{ width: 400, marginLeft: 900 }}
                     />
                 </div>
-                <Table id={"table_1"}
+                <Table
                     components={components}
                     rowSelection={rowSelection}
                     rowClassName={() => 'editable-row'}

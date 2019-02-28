@@ -12,9 +12,9 @@ export default class Edit extends React.Component {
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleTitleBlur = this.handleTitleBlur.bind(this);
         this.handleAddQuestion = this.handleAddQuestion.bind(this);
-        this.handleAddRadio = this.handleAddRadio.bind(this);
-        this.handleAddCheckbox = this.handleAddCheckbox.bind(this);
-        this.handleAddTextArea = this.handleAddTextArea.bind(this);
+        this.handleAddTwo = this.handleAddTwo.bind(this);
+        this.handleAddThree = this.handleAddThree.bind(this);
+        this.handleAddFour = this.handleAddFour.bind(this);
         this.handleQuestionChange = this.handleQuestionChange.bind(this);
         this.handleShiftQuestion = this.handleShiftQuestion.bind(this);
         this.handleCopyQuestion = this.handleCopyQuestion.bind(this);
@@ -54,120 +54,161 @@ export default class Edit extends React.Component {
         })
     }
 
-    handleAddRadio() {
+    handleAddScoreOne() {
+        let { Topics } = this.state;
         const newQuestion = {
-            type: 'radio',
-            title: '单选题',
-            options: [{text: '选项一'}, {text: '选项二'}, {text: '选项三'}, {text: '选项四'}],
+            type: '0',
+            title: '一起加',
+            options: [{text: '加分 +{Topics.TotalScore}'}, {text: '不加分'}],
             data: []
         };
         this.setState((prevState) => ({
-            questions: prevState.questions.concat(newQuestion),
+            Topics: prevState.Topics.concat(newQuestion),
             addAreaVisible: false
         }));
     }
 
-    handleAddCheckbox() {
+    handleAddScoreTwo() {
+        let { Topics } = this.state;
         const newQuestion = {
-            type: 'checkbox',
-            title: '多选题',
-            options: [{text: '选项一'}, {text: '选项二'}, {text: '选项三'}, {text: '选项四'}],
+            type: '1',
+            title: '分步加',
+            options: [{text: '加分 +{Topics.TotalScore}'}, {text: '不加分'}],
             data: []
         };
         this.setState((prevState) => ({
-            questions: prevState.questions.concat(newQuestion),
+            Topics: prevState.Topics.concat(newQuestion),
             addAreaVisible: false
         }));
     }
 
-    handleAddTextArea() {
+    handleAddTwo() {
         const newQuestion = {
-            type: 'textarea',
-            title: '文本题',
-            text: '',
-            required: false
+            type: '0',
+            title: '两项',
+            options: [{text: '加分 +1'}, {text: '不加分'}],
+            data: []
         };
         this.setState((prevState) => ({
-            questions: prevState.questions.concat(newQuestion),
+            Topics: prevState.Topics.concat(newQuestion),
+            addAreaVisible: false
+        }));
+    }
+
+    handleAddThree() {
+        const newQuestion = {
+            type: '1',
+            title: '三项',
+            options: [{text: '加分 +1'}, {text: '加分 +2'}, {text: '不加分'}],
+            data: []
+        };
+        this.setState((prevState) => ({
+            Topics: prevState.Topics.concat(newQuestion),
+            addAreaVisible: false
+        }));
+    }
+
+    handleAddFour() {
+        const newQuestion = {
+            type: '2',
+            title: '四项',
+            options: [{text: '+1'}, {text: '+2'}, {text: '+3'}, {text: '不加分'}],
+            data: []
+        };
+        this.setState((prevState) => ({
+            Topics: prevState.Topics.concat(newQuestion),
+            addAreaVisible: false
+        }));
+    }
+
+    handleAddFive() {
+        const newQuestion = {
+            type: '3',
+            title: '六项',
+            options: [{text: '+1'}, {text: '+2'}, {text: '+3'}, {text: '+4'}, {text: '+5'}, {text: '不加分'}],
+            data: []
+        };
+        this.setState((prevState) => ({
+            Topics: prevState.Topics.concat(newQuestion),
             addAreaVisible: false
         }));
     }
 
     handleQuestionChange(e, questionIndex) {
-        let { questions } = this.state;
-        questions[questionIndex].title = e.target.value;
+        let { Topics } = this.state;
+        Topics[questionIndex].title = e.target.value;
         this.setState({
-            questions: questions
+            Topics: Topics
         });
     }
 
     handleShiftQuestion(questionIndex, num) {
-        let { questions } = this.state;
-        let shiftQuestion = questions.splice(questionIndex, 1)[0];
-        questions.splice(questionIndex + num, 0, shiftQuestion);
+        let { Topics } = this.state;
+        let shiftQuestion = Topics.splice(questionIndex, 1)[0];
+        Topics.splice(questionIndex + num, 0, shiftQuestion);
         this.setState({
-            questions: questions
+            Topics: Topics
         })
     }
 
     handleCopyQuestion(questionIndex) {
-        let { questions } = this.state;
-        let copy = Object.assign({}, questions[questionIndex]);
-        if (questions[questionIndex].type !== 'textarea') {
+        let { Topics } = this.state;
+        let copy = Object.assign({}, Topics[questionIndex]);
+        if (Topics[questionIndex].type !== 'textarea') {
             copy.options = copy.options.slice(0);
         }
-        questions.splice(questionIndex + 1, 0, copy);
+        Topics.splice(questionIndex + 1, 0, copy);
         this.setState({
-            questions: questions
+            Topics: Topics
         });
     }
 
     handleRemoveQuestion(questionIndex) {
-        let { questions } = this.state;
-        questions.splice(questionIndex, 1);
+        let { Topics } = this.state;
+        Topics.splice(questionIndex, 1);
         this.setState({
-            questions: questions
+            Topics: Topics
         });
     }
 
     handleOptionChange(e, questionIndex, optionIndex) {
-        let { questions } = this.state;
-        questions[questionIndex].options[optionIndex].text = e.target.value;
+        let { Topics } = this.state;
+        Topics[questionIndex].options[optionIndex].text = e.target.value;
         this.setState({
-            questoins: questions
+            questoins: Topics
         });
     }
 
     handleAddOption(questionIndex) {
-        let { questions } = this.state;
+        let { Topics } = this.state;
         const newOption = { text: '新选项' };
-        questions[questionIndex].options.push(newOption);
+        Topics[questionIndex].options.push(newOption);
         this.setState({
-            questions: questions
+            Topics: Topics
         });
     }
 
     handleRemoveOption(questionIndex, optionIndex) {
-        let { questions } = this.state;
-        questions[questionIndex].options.splice(optionIndex, 1);
+        let { Topics } = this.state;
+        Topics[questionIndex].options.splice(optionIndex, 1);
         this.setState({
-            questions: questions
+            Topics: Topics
         });
     }
 
     handleTextChange(e, questionIndex) {
-        let { questions } = this.state;
-        questions[questionIndex].text = e.target.value;
+        let { Topics } = this.state;
+        Topics[questionIndex].text = e.target.value;
         this.setState({
-            questions: questions
+            Topics: Topics
         });
     }
 
     handleTextRequire(e, questionIndex) {
-        let { questions } = this.state;
-        questions[questionIndex].required = e.target.checked;
+        let { Topics } = this.state;
+        Topics[questionIndex].required = e.target.checked;
         this.setState({
-            questions: questions
+            Topics: Topics
         });
     }
 
@@ -189,7 +230,7 @@ export default class Edit extends React.Component {
     handleReleaseQuestionnaire() {
         let me = this;
 
-        if (this.state.questions.length === 0) {
+        if (this.state.Topics.length === 0) {
             Modal.warning({
                 title: '请添加至少一个问题'
             });
@@ -230,19 +271,19 @@ export default class Edit extends React.Component {
         return (
             this.state.addAreaVisible ? (
                 <div style={{ padding: 30, textAlign: 'center', border: '1px solid #eee' }}>
-                    <Button icon="check-circle-o" size="large" onClick={this.handleAddRadio}>单选</Button>
-                    <Button icon="check-square-o" size="large" style={{ marginLeft: 16 }} onClick={this.handleAddCheckbox}>多选</Button>
-                    <Button icon="file-text" size="large" style={{ marginLeft: 16 }} onClick={this.handleAddTextArea}>文本</Button>
+                    <Button icon="check-circle-o" size="large" onClick={this.handleAddTwo}>两项</Button>
+                    <Button icon="check-square-o" size="large" style={{ marginLeft: 16 }} onClick={this.handleAddThree()}></Button>
+                    <Button icon="file-text" size="large" style={{ marginLeft: 16 }} onClick={this.handleAddFour}>文本</Button>
                 </div>
             ) : ''
         );
     }
 
     getQuestions() {
-        let questions = this.state.questions;
+        let Topics = this.state.Topics;
         const { TextArea } = Input;
-
-        return questions.map((question, questionIndex, array) => {
+        console.log('@Topics',Topics);
+        return Topics.map((question, questionIndex, array) => {
             if (question.type === 'radio') {
                 return (
                     <div className="questionsWrap" style={{ padding: 30 }} key={questionIndex}>

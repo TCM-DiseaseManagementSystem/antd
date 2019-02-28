@@ -18,7 +18,7 @@ const Data = [
         title: 'MMSE评分量表',
         description: '100',
         time: '2018-12-20'
-    },,
+    },
     {
         title: 'MoCA评分量表',
         description: '100',
@@ -62,27 +62,33 @@ export default class History extends Component{
     }
 
     render() {
+
         return (
-            <List
-                className="demo-loadmore-list"
-                itemLayout="horizontal"
-                pagination={{
-                    onChange: (page) => {
-                        console.log(page);
-                    },
-                    pageSize: 2,
-                }}
-                dataSource={Data}
-                renderItem={item => (
-                    <List.Item actions={[this.jump(item)]}>
-                        <List.Item.Meta
-                            title={item.title}
-                            description={item.description}
-                        />
-                        <div>{item.time}</div>
-                    </List.Item>
-                )}
-            />
+            <div>
+                <List
+                    className="demo-loadmore-list"
+                    itemLayout="horizontal"
+                    pagination={{
+                        onChange: (page) => {
+                            console.log(page);
+                        },
+                        pageSize: 10,
+                    }}
+                    dataSource={Data}
+                    renderItem={item => (
+                        <List.Item
+                            key={item.title}
+                            actions={[this.jump(item)]}
+                        >
+                            <List.Item.Meta
+                                title={item.title}
+                                description={item.description}
+                            />
+                            <div>{item.time}</div>
+                        </List.Item>
+                    )}
+                />
+            </div>
         );
     }
 }
