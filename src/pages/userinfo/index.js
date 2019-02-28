@@ -189,7 +189,7 @@ export default class UserInfo extends Component {
                     this.state.dataSource.length >= 1
                         ? (
                             <div className='operation'>
-                                <Link to="/history"><Button onClick={() => this.handleEdit}>查看</Button></Link>
+                                <Link to="/cognition"><Button onClick={() => this.handleEdit}>查看</Button></Link>
                                 <Popconfirm title="确认删除?" onConfirm={() => this.handleDelete(record.key)} okText="确认" cancelText="取消">
                                     <Button>删除</Button>
                                 </Popconfirm>
@@ -337,7 +337,8 @@ export default class UserInfo extends Component {
         });
         return (
             <div className='content'>
-                <div style={{ marginBottom: 16 }}>
+                <div style={{ marginBottom: 16 ,justifyContent:'space-between',flexDirection:'row'}}>
+
                     <Button onClick={this.setModal3Visible}  style={{ marginRight: 5, marginBottom: 16 }}>
                         添加患者
                     </Button>
@@ -364,10 +365,12 @@ export default class UserInfo extends Component {
                     <span style={{ marginLeft: 8 }}>
                      {hasSelected ? `选中 ${selectedRowKeys.length} 条记录` : ''}
                      </span>
+
                     <Search
+                        className={'search'}
                         placeholder="根据姓名查询患者"
                         onSearch={value => console.log(value)}
-                        style={{ width: 400, marginLeft: 900 }}
+                        style={{ width: 400,float:'right'}}
                     />
                 </div>
                 <Table

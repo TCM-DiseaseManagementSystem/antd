@@ -320,7 +320,6 @@ export default class Content extends React.Component {
                 data1.length >= 1
                     ? (
                         <Popconfirm title="确认添加?" onConfirm={()=>this.addDiease(record)} okText="确认" cancelText="取消">
-                            {console.log('@text',text,"@record",record)}
                             <Button >添加</Button>
                         </Popconfirm>
                     ):null
