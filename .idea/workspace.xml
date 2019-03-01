@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbfb25a6-bb28-4f34-a777-bc3ffcad0b9f" name="Default Changelist" comment="合并杨佳丽代码">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Footer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Header/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Header/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Navleft/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Navleft/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Navleft/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Navleft/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/disease-related/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/disease-related/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/disease-related/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/disease-related/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/cognition/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/cognition/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/cognition/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/cognition/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/diagnosis/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/diagnosis/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/diagnosis/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/diagnosis/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/mmse/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/mmse/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/mmse/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/mmse/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/moca/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/moca/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/moca/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/moca/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route.js" afterDir="false" />
-    </list>
+    <list default="true" id="bbfb25a6-bb28-4f34-a777-bc3ffcad0b9f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -88,8 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/history/physicochemical/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            <state relative-caret-position="324">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -359,7 +339,7 @@
       <workItem from="1551238189900" duration="7738000" />
       <workItem from="1551256449628" duration="3415000" />
       <workItem from="1551315440293" duration="8574000" />
-      <workItem from="1551401722283" duration="23453000" />
+      <workItem from="1551401722283" duration="23726000" />
     </task>
     <task id="LOCAL-00001" summary="新增患者管理和问卷管理页面">
       <created>1550802164447</created>
@@ -382,11 +362,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551334836903</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="根据后台表结构模拟四诊信息、MMSE评分量表、认知筛查量表和MoCA评分量表数据，修改页面样式">
+      <created>1551432711745</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1551432711745</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182723000" />
+    <option name="totallyTimeSpent" value="182996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -442,7 +429,8 @@
     <MESSAGE value="新增患者管理和问卷管理页面" />
     <MESSAGE value="新增患者四诊信息采集详情、认知筛查量表得分详情、MMSE评分量表详情和MoCA评分量表详情页面" />
     <MESSAGE value="合并杨佳丽代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="合并杨佳丽代码" />
+    <MESSAGE value="根据后台表结构模拟四诊信息、MMSE评分量表、认知筛查量表和MoCA评分量表数据，修改页面样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="根据后台表结构模拟四诊信息、MMSE评分量表、认知筛查量表和MoCA评分量表数据，修改页面样式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -794,8 +782,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/history/physicochemical/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="324">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
         </state>
       </provider>
     </entry>
