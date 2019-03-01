@@ -268,6 +268,7 @@ export default class Content extends React.Component {
                         <div className='operation'>
                             <Button onClick={()=>this.setModal1Visible(record)} className='btn'>编辑</Button>
                             <Modal
+                                centered
                                 visible={this.state.modal1Visible}
                                 title="编辑"
                                 okText='保存'
@@ -290,11 +291,13 @@ export default class Content extends React.Component {
                             </Modal>
                             <Button onClick={this.setModal2Visible} className='btn'>关联证型</Button>
                             <Modal
+                                centered
                                 width={1200}
                                 title='关联证型'
                                 okText='完成'
                                 cancelText='取消'
                                 visible={this.state.modal2Visible}
+                                destroyOnClose={true}
                                 onCancel={this.handleCancel}
                                 className="form-modal"
                                 maskStyle={{backgroundColor:'rgba(0,0,0,.3)'}}
@@ -314,14 +317,19 @@ export default class Content extends React.Component {
                                                 placeholder="根据疾病名称或疾病首字母搜索证型"
                                                 onSearch={value => this.search(value)}
                                                 onChange={value=>this.search(value)}
-                                                style={{ width: 300, marginLeft: 200 }}
+                                                style={{ width: 300, marginLeft: 180 }}
                                             />
                                         </div>
                                         <Table
+                                            pagination={{
+                                                onChange: (page) => {
+                                                    console.log(page);
+                                                },
+                                                pageSize: 9,
+                                            }}
                                             dataSource={this.state.data2}
                                             columns={this.columns2}
                                         />
-                                        {console.log("data2",this.state.data2)}
                                         </Col>
                                     </Row>
                                 </Modal>
@@ -623,6 +631,7 @@ export default class Content extends React.Component {
                         添加疾病
                     </Button>
                     <Modal
+                        centered
                         title='添加疾病'
                         okText='添加'
                         cancelText='取消'

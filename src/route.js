@@ -32,7 +32,6 @@ export default class Router extends React.Component{
                                     <Route exact path="/check" component={Check} />
                                     <Route exact path="/edit" component={EditQues} />
                                     <Route exact path="/add" component={AddQues} />
-
                                     <Route exact path="/admin/userinfo" component={UserInfo} />
                                     <Route exact path="/history" component={History} />
                                     <Route exact path="/diagnosis" component={Diagnosis} />

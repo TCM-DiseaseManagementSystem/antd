@@ -61,7 +61,7 @@ const SubMenu = Menu.SubMenu;
                     </div>
                 {/*</NavLink>*/}
                 <Menu
-                    theme="dark"
+                    style={{ backgroundColor: '#66aff0' }}
                 >
                     { this.state.menuTreeNode }
                 </Menu>
