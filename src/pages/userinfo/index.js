@@ -179,8 +179,15 @@ export default class UserInfo extends Component {
                 render: (text, record) => (
                     this.state.dataSource.length >= 1
                         ? (
-                            <div>
-                                <Link to="/history"><Button onClick={() => this.handleEdit} className={'btn'}>查看</Button></Link>
+                            <div key={record.Id}>
+                                <Link to= {
+                                    {
+                                    pathname:'/history',
+                                    state:{key: record.Id}
+                                }
+                                }>
+                                    <Button onClick={() => this.handleEdit} className={'btn'}>查看</Button>
+                                </Link>
                                 <Popconfirm title="确认删除?" onConfirm={() => this.handleDelete(record.Id)} okText="确认" cancelText="取消">
                                     <Button>删除</Button>
                                 </Popconfirm>

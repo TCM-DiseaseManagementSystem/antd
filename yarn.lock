@@ -8372,9 +8372,10 @@ react-app-rewire-less@^2.1.3:
     less-loader "^4.1.0"
     npm "^6.4.1"
 
-react-app-rewired@^2.0.1:
-  version "2.0.1"
-  resolved "http://registry.npm.taobao.org/react-app-rewired/download/react-app-rewired-2.0.1.tgz#5c4902e68e78aa8851ef84a03579418b6f891e0b"
+react-app-rewired@^2.1.0:
+  version "2.1.0"
+  resolved "http://registry.npm.taobao.org/react-app-rewired/download/react-app-rewired-2.1.0.tgz#8451acbf5e9d3d2252b259d4d531f60845817df4"
+  integrity sha1-hFGsv16dPSJSslnU1TH2CEWBffQ=
   dependencies:
     cross-spawn "^6.0.5"
     dotenv "^6.2.0"
