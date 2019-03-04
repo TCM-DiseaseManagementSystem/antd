@@ -133,7 +133,7 @@ export default class UserInfo extends Component {
                 Id: "",
                 Name: "",
                 Gender: 0,
-                Born: new  Date().Format("yyyy-MM-dd"),
+                Born: new Date().Format("yyyy-MM-dd"),
                 Education: "",
                 MaritalStatus: 0,
                 DwellingStatus: 0,
