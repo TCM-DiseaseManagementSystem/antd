@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import {
-    Table, Input, Button, Popconfirm, Form,Modal,Row,Col
+    Table, message, Input, Button, Popconfirm, Form,Modal,Row,Col, Radio, DatePicker, Select
 } from 'antd';
 import {Link} from "react-router-dom";
+import $ from "jquery";
 import './index.less';
 const FormItem = Form.Item;
 const Search = Input.Search;
+const RadioGroup = Radio.Group;
+const Option = Select.Option;
 const EditableContext = React.createContext();
 
 const EditableRow = ({ form, index, ...props }) => (
@@ -117,33 +120,7 @@ export default class UserInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataSource: [{
-                key: '0',
-                name: 'Jone',
-                age: '30',
-                sex: '男',
-                birthday: '1989-02-21',
-                address: '四川省成都市温江区柳台大道1166号',
-                time: '四诊数据采集 2018-12-24'
-            },
-                {
-                    key: '1',
-                    name: 'Mike',
-                    age: '29',
-                    sex: '男',
-                    birthday: '1990-02-21',
-                    address: '四川省成都市温江区柳台大道1166号',
-                    time: '四诊数据采集 2018-12-24'
-                },
-                {
-                    key: '2',
-                    name: 'Rose',
-                    age: '20',
-                    sex: '女',
-                    birthday: '1999-02-21',
-                    address: '四川省成都市金牛区十二桥路37号',
-                    time: '四诊数据采集 2018-12-24'
-                }],
+            dataSource: [],
             count: 2,
             loading: false,
             modal1Visible: false,
@@ -152,33 +129,47 @@ export default class UserInfo extends Component {
             nameText: '',
             pyText: '',
             selectedRowKeys: [],
+            Respondent : {
+                Id: "",
+                Name: "",
+                Gender: 0,
+                Born: "",
+                Education: "",
+                MaritalStatus: 0,
+                DwellingStatus: 0,
+                Hobby: "",
+                Phone: "",
+                IDCard: "",
+                Address: "",
+                RecordUserId: "3c5e636a-c182-4ad7-a7b1-9205bbe534f5",
+                CreatedAt: ""
+            },
         };
-
         this.columns = [
             {
                 title: '姓名',
-                dataIndex: 'name',
+                dataIndex: 'Name',
                 editable: true,
                 align: 'center'
             },
             {
                 title: '性别',
-                dataIndex: 'sex',
+                dataIndex: 'Gender',
                 align: 'center'
             },
             {
                 title: '出生日期',
-                dataIndex: 'birthday',
+                dataIndex: 'Born',
                 align: 'center'
             },
             {
                 title: '家庭地址',
-                dataIndex: 'address',
+                dataIndex: 'Address',
                 align: 'center'
             },
             {
                 title: '最近一次使用',
-                dataIndex: 'time',
+                dataIndex: 'UpdatedAt',
                 align: 'center'
             },
             {
@@ -190,7 +181,7 @@ export default class UserInfo extends Component {
                         ? (
                             <div>
                                 <Link to="/history"><Button onClick={() => this.handleEdit} className={'btn'}>查看</Button></Link>
-                                <Popconfirm title="确认删除?" onConfirm={() => this.handleDelete(record.key)} okText="确认" cancelText="取消">
+                                <Popconfirm title="确认删除?" onConfirm={() => this.handleDelete(record.Id)} okText="确认" cancelText="取消">
                                     <Button>删除</Button>
                                 </Popconfirm>
                             </div>
@@ -199,6 +190,10 @@ export default class UserInfo extends Component {
             }
         ];
         this.handleEdit = this.handleEdit.bind(this);
+    }
+
+    componentWillMount(){
+        this.searchRespondent()
     }
 
     handleEdit() {
@@ -229,7 +224,7 @@ export default class UserInfo extends Component {
     //显示增加疾病Modal
     setModal3Visible = () => {
         this.setState({
-            modal3Visible: true,
+            modal3Visible: !this.state.modal3Visible,
         });
     };
 
@@ -249,50 +244,78 @@ export default class UserInfo extends Component {
         });
     };
 
-    //添加疾病名称
-    onChangeNameText= (e) => {
-        this.setState({ nameText: e.target.value });
-    };
-
-    //添加疾病拼音
-    onChangePYText= (e) => {
-        this.setState({ pyText: e.target.value });
-    };
 
     //删除一条疾病
     handleDelete = (key) => {
-        const dataSource = [...this.state.dataSource];
-        this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
+        const load = this.searchRespondent;
+        $.ajax({
+            type:"Post",
+            url:"http://localhost:5010/visit/delete/deleteOne",
+            data:{Id:key},
+            dataType:"Json",
+            success: (data)=> {
+                if(data.Success){
+                    message.success('Delete Success');
+                }else {
+                    message.warning('Delete failed');
+                }
+                load();
+                // clear();
+            },
+            async:true
+        })
     };
 
     //批量删除
-    handleDeleteAll=(key)=>{
-        const dataSource = [...this.state.dataSource];
-        const dataKey=[...this.state.selectedRowKeys]
-        this.setState({
-            dataSource:dataSource.filter(item=>{
-                dataKey.map(key=>{
-                    return key.key !==item.key
-                })
-            })
+    handleDeleteAll=()=>{
+        const dataKey=[...this.state.selectedRowKeys];
+        const load = this.searchRespondent;
+        $.ajax({
+            type:"Post",
+            url:"http://localhost:5010/visit/delete/batchDelete",
+            data:{"Ids":dataKey},
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "cache-control": "no-cache",
+            },
+            traditional:true,
+            dataType:"Json",
+            success: (data)=> {
+                if(data.Success){
+                    message.success('Delete Success');
+                }else {
+                    message.warning('Delete failed');
+                }
+                load();
+            },
+            async:true
         })
-    }
+    };
 
-    //添加一条疾病
+    //添加受访者
     handleAdd = () => {
-        const { count, dataSource } = this.state;
-        const newData = {
-            key: count,
-            name: this.state.nameText,
-            pinyin: this.state.pyText ,
-        };
-        this.setState({
-            dataSource: [...dataSource, newData],
-            count: count + 1,
-            nameText: '',
-            pyText: '',
-            modal3Visible: false,
-        });
+        let { Respondent } = this.state;
+        const load = this.searchRespondent;
+        // const clear = this.clearRespondent;
+        const visible = this.setModal3Visible;
+
+        visible();
+         $.ajax({
+            type:"POST",
+            url:"http://localhost:5010/visit/change/addOrUpdate",
+            data:{...Respondent},
+            dataType:"Json",
+            success: (data)=> {
+                if(data.Success){
+                    message.success('Add Success');
+                }else {
+                    message.warning('Add failed');
+                }
+                load();
+                // clear();
+            },
+            async:true
+        })
     };
 
     handleSave = (row) => {
@@ -306,9 +329,45 @@ export default class UserInfo extends Component {
         this.setState({ dataSource: newData });
     };
 
+    //搜索受访者
+    searchRespondent = key => {
+        let set =(data)=> {
+            this.setState({dataSource:data.Data})
+        };
+        $.ajax({
+            type:"GET",
+            url:"http://localhost:5010/visit/get/GetByKey",
+            data:{key:key},
+            dataType:"Json",
+            success:function (data) {
+                set(data)
+            },
+            async:true
+        })
+
+    };
+
+    //恢复受访者状态
+    clearRespondent = () => {
+        this.state.Respondent = {
+            Id: "",
+            Name: "",
+            Gender: 0,
+            Born: "",
+            Education: "",
+            MaritalStatus: 0,
+            DwellingStatus: 0,
+            Hobby: "",
+            Phone: "",
+            IDCard: "",
+            Address: "",
+            RecordUserId: "3c5e636a-c182-4ad7-a7b1-9205bbe534f5",
+            CreatedAt: ""
+        }
+    };
+
     render() {
-        const { dataSource, selectedRowKeys } = this.state;
-        const key = dataSource.key;
+        const { dataSource, selectedRowKeys, Respondent } = this.state;
         const hasSelected = selectedRowKeys.length > 0;
         const rowSelection = {
             selectedRowKeys,
@@ -351,10 +410,33 @@ export default class UserInfo extends Component {
                         onOk={this.handleAdd}
                         onCancel={this.handleCancel}
                     >
-                        <Input placeholder="请输入患者名字" onChange={this.onChangeNameText} className={"name-input"} />
-                        <Input placeholder="请输入疾病拼音" onChange={this.onChangePYText} className={"py-input"} />
+                        <Input placeholder="请输入患者名字" onChange={value => Respondent.Name = value.target.value} className={"name-input"} />
+                        <RadioGroup onChange={value => Respondent.Gender = value.target.value}
+                                    defaultValue={0}>
+                            <Radio value={1}>男</Radio>
+                            <Radio value={0}>女</Radio>
+                        </RadioGroup>
+                        <DatePicker placeholder={"请选择患者出生日期"}
+                                    onChange={value => Respondent.Born = value.format("YYYY-MM-DD")}
+                        />
+                        <Input placeholder="请输入患者教育程度" onChange={value => Respondent.Education = value.target.value} className={"name-input"} />
+                        <Select defaultValue={0} style={{ width: 120 }} placeholder={"请选择患者婚姻状况"}
+                                onChange={value => Respondent.MaritalStatus = value}>
+                            <Option value={0}>未婚</Option>
+                            <Option value={1}>已婚</Option>
+                        </Select>
+                        <Select defaultValue={0} style={{ width: 120 }} placeholder={"请选择患者居住状况"}
+                                onChange={value => Respondent.DwellingStatus = value}>
+                            <Option value={0}>独自居住</Option>
+                            <Option value={1}>夫妻同居</Option>
+                            <Option value={2}>子女同居</Option>
+                        </Select>
+                        <Input placeholder="请输入患者爱好" onChange={value => Respondent.Hobby = value.target.value} className={"name-input"} />
+                        <Input placeholder="请输入患者手机号码" onChange={value => Respondent.Phone = value.target.value} className={"name-input"} />
+                        <Input placeholder="请输入患者身份证号" onChange={value => Respondent.IDCard = value.target.value} className={"name-input"} />
+                        <Input placeholder="请输入患者住址" onChange={value => Respondent.Address = value.target.value} className={"name-input"} />
                     </Modal>
-                    <Popconfirm title="确认删除?" onConfirm={() => this.handleDeleteAll(key)} okText="确认" cancelText="取消">
+                    <Popconfirm title="确认删除?" onConfirm={() => this.handleDeleteAll()} okText="确认" cancelText="取消">
                         <Button
                             disabled={!hasSelected}
                         >
@@ -366,7 +448,7 @@ export default class UserInfo extends Component {
                      </span>
                     <Search
                         placeholder="根据姓名查询患者"
-                        onSearch={value => console.log(value)}
+                        onSearch={value => this.searchRespondent(value)}
                         style={{ width: 400, marginLeft: 900 }}
                     />
                 </div>
@@ -376,6 +458,7 @@ export default class UserInfo extends Component {
                     rowClassName={() => 'editable-row'}
                     dataSource={dataSource}
                     columns={columns}
+                    rowKey = {record => record.Id}
                 />
             </div>
         );
