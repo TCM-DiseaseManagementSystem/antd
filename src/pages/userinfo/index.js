@@ -5,6 +5,7 @@ import {
 import {Link} from "react-router-dom";
 import $ from "jquery";
 import './index.less';
+import Api from '../../common/Api';
 const FormItem = Form.Item;
 const Search = Input.Search;
 const RadioGroup = Radio.Group;
@@ -247,10 +248,11 @@ export default class UserInfo extends Component {
 
     //删除一条疾病
     handleDelete = (key) => {
+        let _this = this;
         const load = this.searchRespondent;
         $.ajax({
             type:"Post",
-            url:"http://localhost:5010/visit/delete/deleteOne",
+            url:Api+"/visit/delete/deleteOne",
             data:{Id:key},
             dataType:"Json",
             success: (data)=> {
@@ -272,7 +274,7 @@ export default class UserInfo extends Component {
         const load = this.searchRespondent;
         $.ajax({
             type:"Post",
-            url:"http://localhost:5010/visit/delete/batchDelete",
+            url:Api + "/visit/delete/batchDelete",
             data:{"Ids":dataKey},
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
@@ -302,7 +304,7 @@ export default class UserInfo extends Component {
         visible();
          $.ajax({
             type:"POST",
-            url:"http://localhost:5010/visit/change/addOrUpdate",
+            url:Api+"/visit/change/addOrUpdate",
             data:{...Respondent},
             dataType:"Json",
             success: (data)=> {
@@ -336,7 +338,7 @@ export default class UserInfo extends Component {
         };
         $.ajax({
             type:"GET",
-            url:"http://localhost:5010/visit/get/GetByKey",
+            url:Api+ "/visit/get/GetByKey",
             data:{key:key},
             dataType:"Json",
             success:function (data) {

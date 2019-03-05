@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbfb25a6-bb28-4f34-a777-bc3ffcad0b9f" name="Default Changelist" comment="为 Date类增添Format属性 以解决出生日期转换错误问题">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/common/Api.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/Date.js" afterPath="$PROJECT_DIR$/src/common/Date.js" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/pages/disease-related/index.js" afterPath="$PROJECT_DIR$/src/pages/disease-related/index.js" />
       <change beforePath="$PROJECT_DIR$/src/pages/userinfo/index.js" afterPath="$PROJECT_DIR$/src/pages/userinfo/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,14 +19,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/userinfo/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="244">
+              <caret line="251" column="43" lean-forward="true" selection-start-line="251" selection-start-column="8" selection-end-line="251" selection-end-column="43" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="n#EditableTable#0" expanded="false" />
+                <element signature="e#3984#6302#0" expanded="false" />
+                <element signature="e#6586#6662#0" expanded="false" />
+                <element signature="e#6712#6788#0" expanded="false" />
+                <element signature="e#6839#6936#0" expanded="false" />
+                <element signature="e#6978#7049#0" expanded="false" />
+                <element signature="e#7095#7240#0" expanded="false" />
+                <element signature="e#7863#8597#0" expanded="false" />
+                <element signature="e#8634#9307#0" expanded="false" />
+                <element signature="e#9336#9639#0" expanded="false" />
+                <element signature="e#9684#10036#0" expanded="false" />
+                <element signature="e#11659#14169#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/disease-related/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="581" column="23" lean-forward="true" selection-start-line="581" selection-start-column="23" selection-end-line="581" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+                <element signature="n#EditableTable#0" expanded="false" />
+                <element signature="e#4240#4362#0" expanded="false" />
+                <element signature="e#4385#4474#0" expanded="false" />
+                <element signature="e#5396#6769#0" expanded="false" />
+                <element signature="e#6908#9482#0" expanded="false" />
+                <element signature="e#9825#10538#0" expanded="false" />
+                <element signature="e#10563#11283#0" expanded="false" />
+                <element signature="e#11564#11809#0" expanded="false" />
+                <element signature="e#11850#12166#0" expanded="false" />
+                <element signature="e#12212#12541#0" expanded="false" />
+                <element signature="e#12586#12914#0" expanded="false" />
+                <element signature="e#12952#13492#0" expanded="false" />
+                <element signature="e#13539#13792#0" expanded="false" />
+                <element signature="e#13818#14481#0" expanded="false" />
+                <element signature="e#14523#15107#0" expanded="false" />
+                <element signature="e#15165#15216#0" expanded="false" />
+                <element signature="e#15270#15423#0" expanded="false" />
+                <element signature="e#15476#15678#0" expanded="false" />
+                <element signature="e#15728#15825#0" expanded="false" />
+                <element signature="e#15866#16490#0" expanded="false" />
+                <element signature="e#16726#16783#0" expanded="false" />
+                <element signature="e#16929#17441#0" expanded="false" />
+                <element signature="e#17479#18242#0" expanded="false" />
+                <element signature="e#18888#19191#0" expanded="false" />
+                <element signature="e#21600#21752#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -44,16 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>record</find>
-      <find>hasSelected</find>
-      <find>handleDelete</find>
-      <find>renderMenu</find>
-      <find>Skeleton</find>
-      <find>问卷</find>
-      <find>mockData</find>
-      <find>columns</find>
-      <find>list</find>
-      <find>handleAddCheckbox</find>
       <find>handleAddTextArea</find>
       <find>handleAddQuestion</find>
       <find>addAreaVisible</find>
@@ -72,6 +110,18 @@
       <find>app.css</find>
       <find>import './admin.css';</find>
       <find>syndrome-title</find>
+      <find>rowKey</find>
+      <find>setModal1Visible</find>
+      <find>handleAdd</find>
+      <find>console.log(&quot;@k</find>
+      <find>handleDeleteAll</find>
+      <find>onSelectChange</find>
+      <find>selectedRowKeys</find>
+      <find>key</find>
+      <find>setModal2Visible</find>
+      <find>handleCancel</find>
+      <find>console.log</find>
+      <find>addDiease</find>
     </findStrings>
     <dirStrings>
       <dir>F:\antd\node_modules</dir>
@@ -101,7 +151,6 @@
         <option value="$PROJECT_DIR$/src/admin.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/pages/nomatch/nomatch.js" />
-        <option value="$PROJECT_DIR$/src/pages/disease-related/index.js" />
         <option value="$PROJECT_DIR$/src/component/Navleft/index.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/pages/history-detail/index.js" />
@@ -115,8 +164,10 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/public/Date.js" />
         <option value="$PROJECT_DIR$/src/common/Date.js" />
-        <option value="$PROJECT_DIR$/src/pages/userinfo/index.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/common/Api.js" />
+        <option value="$PROJECT_DIR$/src/pages/userinfo/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/disease-related/index.js" />
       </list>
     </option>
   </component>
@@ -127,6 +178,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-15" />
@@ -153,7 +207,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,18 +217,26 @@
             <path>
               <item name="antd" type="b2602c69:ProjectViewProjectNode" />
               <item name="antd" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="antd" type="b2602c69:ProjectViewProjectNode" />
               <item name="antd" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="antd" type="b2602c69:ProjectViewProjectNode" />
               <item name="antd" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="antd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="antd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="disease-related" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="antd" type="b2602c69:ProjectViewProjectNode" />
@@ -188,12 +249,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../王雪莉/课程源码" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kangjiaxin2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -269,6 +331,7 @@
       <workItem from="1551256449628" duration="3415000" />
       <workItem from="1551315440293" duration="8574000" />
       <workItem from="1551401722283" duration="23726000" />
+      <workItem from="1551747508813" duration="3454000" />
     </task>
     <task id="LOCAL-00001" summary="新增患者管理和问卷管理页面">
       <created>1550802164447</created>
@@ -305,46 +368,41 @@
       <option name="project" value="LOCAL" />
       <updated>1551668190296</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="为 Date类增添Format属性 以解决出生日期转换错误问题">
+      <created>1551669108188</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551669108188</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186687000" />
+    <option name="totallyTimeSpent" value="206219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-15" y="17" width="1813" height="992" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26916525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24985804" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26369426" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19363058" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979977" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979977" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25559482" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25477707" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,12 +427,11 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/react-app-rewired/index.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-app-rewired/scripts/start.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-app-rewired/config-overrides.js" />
     <entry file="file://$USER_HOME$/Desktop/课程源码/src/components/Header/index.js" />
@@ -538,17 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/disease-related/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="319" column="30" lean-forward="false" selection-start-line="319" selection-start-column="30" selection-end-line="319" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#51#0" expanded="false" />
-            <element signature="n#EditableTable#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/history/diagnosis/index.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -665,23 +711,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Date.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Date.js" />
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -689,7 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -697,7 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,18 +741,71 @@
         <state relative-caret-position="180">
           <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/Api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/userinfo/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="244">
+          <caret line="251" column="43" lean-forward="true" selection-start-line="251" selection-start-column="8" selection-end-line="251" selection-end-column="43" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
             <element signature="n#EditableTable#0" expanded="false" />
+            <element signature="e#3984#6302#0" expanded="false" />
+            <element signature="e#6586#6662#0" expanded="false" />
+            <element signature="e#6712#6788#0" expanded="false" />
+            <element signature="e#6839#6936#0" expanded="false" />
+            <element signature="e#6978#7049#0" expanded="false" />
+            <element signature="e#7095#7240#0" expanded="false" />
+            <element signature="e#7863#8597#0" expanded="false" />
+            <element signature="e#8634#9307#0" expanded="false" />
+            <element signature="e#9336#9639#0" expanded="false" />
+            <element signature="e#9684#10036#0" expanded="false" />
+            <element signature="e#11659#14169#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/disease-related/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="581" column="23" lean-forward="true" selection-start-line="581" selection-start-column="23" selection-end-line="581" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+            <element signature="n#EditableTable#0" expanded="false" />
+            <element signature="e#4240#4362#0" expanded="false" />
+            <element signature="e#4385#4474#0" expanded="false" />
+            <element signature="e#5396#6769#0" expanded="false" />
+            <element signature="e#6908#9482#0" expanded="false" />
+            <element signature="e#9825#10538#0" expanded="false" />
+            <element signature="e#10563#11283#0" expanded="false" />
+            <element signature="e#11564#11809#0" expanded="false" />
+            <element signature="e#11850#12166#0" expanded="false" />
+            <element signature="e#12212#12541#0" expanded="false" />
+            <element signature="e#12586#12914#0" expanded="false" />
+            <element signature="e#12952#13492#0" expanded="false" />
+            <element signature="e#13539#13792#0" expanded="false" />
+            <element signature="e#13818#14481#0" expanded="false" />
+            <element signature="e#14523#15107#0" expanded="false" />
+            <element signature="e#15165#15216#0" expanded="false" />
+            <element signature="e#15270#15423#0" expanded="false" />
+            <element signature="e#15476#15678#0" expanded="false" />
+            <element signature="e#15728#15825#0" expanded="false" />
+            <element signature="e#15866#16490#0" expanded="false" />
+            <element signature="e#16726#16783#0" expanded="false" />
+            <element signature="e#16929#17441#0" expanded="false" />
+            <element signature="e#17479#18242#0" expanded="false" />
+            <element signature="e#18888#19191#0" expanded="false" />
+            <element signature="e#21600#21752#0" expanded="false" />
           </folding>
         </state>
       </provider>
