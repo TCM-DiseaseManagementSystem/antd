@@ -296,7 +296,7 @@ class Edit extends React.Component {
                         {this.getQuestionOperator(questionIndex, array)}
                     </div>
                 );
-            } else if (question.type === 0) {
+            } else if (question.type === 1) {
                 return (
                     <div className="questionsWrap" style={{ padding: 30 }} key={questionIndex}>
                         <span>Q{questionIndex + 1}</span>
