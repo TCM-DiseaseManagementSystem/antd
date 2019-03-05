@@ -7,7 +7,7 @@ export default class Physicochemical extends Component{
 
     render() {
         return(
-            <div></div>
+            <div>2647325</div>
         )
     }
 }
