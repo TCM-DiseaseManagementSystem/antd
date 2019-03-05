@@ -52,43 +52,47 @@ export default class History extends Component{
         })
     }
 
-    selectDetaile = (data) =>{
-        if (data) {
-            if (data.QuestionnaireRecords) {
-                if (data.QuestionnaireRecords.QuestionnaireName === '认知筛查量表得分' ) {
-                    return(
-                        <Link to="/cognition">
-                            <Button onClick={() => this.handleEdit}>查看</Button>
-                        </Link>
-                    )
-                }else if (data.QuestionnaireRecords.QuestionnaireName === 'MMSE评分量表') {
-                    return(
-                        <Link to="/mmse">
-                            <Button onClick={() => this.handleEdit}>查看</Button>
-                        </Link>
-                    )
-                } else if (data.QuestionnaireRecords.QuestionnaireName === 'MoCA评分量表') {
-                    return(
-                        <Link to="/moca">
-                            <Button onClick={() => this.handleEdit}>查看</Button>
-                        </Link>
-                    )
-                }
-            }else if (data.MedicalRecords) {
-                return(
-                    <Link to="/diagnosis">
-                        <Button onClick={() => this.handleEdit}>查看</Button>
-                    </Link>
-                )
-            }else if (data.GaugeRecords) {
-                return(
-                    <Link to={'/physicochemical'}>
-                        <Button onClick={() => this.handleEdit}>查看</Button>
-                    </Link>
-                )
-            }
-        }
-    }
+    // selectDetaile = (data) =>{
+    //     if (data) {
+    //         if (data.QuestionnaireRecords) {
+    //             if (data.QuestionnaireRecords) {
+    //                 data.QuestionnaireRecords.map((item,index) =>{
+    //                     if (item.QuestionnaireName === '认知筛查量表得分' ) {
+    //                         {/*return(*/}
+    //                             {/*<Link to="/cognition">*/}
+    //                                 {/*<Button onClick={() => this.handleEdit}>查看</Button>*/}
+    //                             {/*</Link>*/}
+    //                         {/*)*/}
+    //                     {/*}*/}
+    //                 })
+    //             }else if (item.QuestionnaireName === 'MMSE评分量表') {
+    //                     return(
+    //                         <Link to="/mmse">
+    //                             <Button onClick={() => this.handleEdit}>查看</Button>
+    //                         </Link>
+    //                     )
+    //             } else if (data.QuestionnaireRecords.QuestionnaireName === 'MoCA评分量表') {
+    //                 return(
+    //                     <Link to="/moca">
+    //                         <Button onClick={() => this.handleEdit}>查看</Button>
+    //                     </Link>
+    //                 )
+    //             }
+    //         }else if (data.MedicalRecords) {
+    //             return(
+    //                 <Link to="/diagnosis">
+    //                     <Button onClick={() => this.handleEdit}>查看</Button>
+    //                 </Link>
+    //             )
+    //         }else if (data.GaugeRecords) {
+    //             return(
+    //                 <Link to={'/physicochemical'}>
+    //                     <Button onClick={() => this.handleEdit}>查看</Button>
+    //                 </Link>
+    //             )
+    //         }
+    //     }
+    // }
 
     getContent = (data) =>{
         if (data) {
@@ -102,7 +106,7 @@ export default class History extends Component{
                                     <span className={'detail-content-dels'}>总体正常，部分指标偏高。</span>
                                 </div>
                                 <div className={'detail-content-time'}>{item.CreatedAt}</div>
-                                <div className={'detail-content-btn'}>{this.selectDetaile(data)}</div>
+                                {/*<div className={'detail-content-btn'}>{this.selectDetaile(data)}</div>*/}
                             </div>
                         )
                     }) : null}
@@ -114,10 +118,8 @@ export default class History extends Component{
                                     <span
                                         className={'detail-content-dels'}>望闻问切，体形结实，肌肉充实，皮肤润泽，表示体格强壮，正气充盛；形体瘦弱，肌肉瘦削，皮肤枯燥，表示衰弱，正气不足。</span>
                                 </div>
-                                <div className={'detail-content-time'}>
-                                    {item.MedicalRecords.CreatedAt}
-                                </div>
-                                <div className={'detail-content-btn'}>{this.selectDetaile(data)}</div>
+                                <div className={'detail-content-time'}>{item.CreatedAt}</div>
+                                {/*<div className={'detail-content-btn'}>{this.selectDetaile(data)}</div>*/}
                             </div>
                         )
                     }): null}
@@ -129,7 +131,7 @@ export default class History extends Component{
                                     <span className={'detail-content-dels'}>{item.TotalScore}</span>
                                 </div>
                                 <div className={'detail-content-time'}>{item.CreatedAt}</div>
-                                <div className={'detail-content-btn'}>{this.selectDetaile(data)}</div>
+                                {/*<div className={'detail-content-btn'}>{this.selectDetaile(data)}</div>*/}
                             </div>
                         )
                     }): null}
