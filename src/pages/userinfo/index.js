@@ -207,20 +207,6 @@ export default class UserInfo extends Component {
     };
 
 
-    //显示编辑疾病Modal
-    setModal1Visible = () => {
-        this.setState({
-            modal1Visible: true,
-        });
-    };
-
-    //显示关联病症Modal
-    setModal2Visible = () => {
-        this.setState({
-            modal2Visible: true,
-        });
-    };
-
 
     //显示增加疾病Modal
     setModal3Visible = () => {
@@ -249,7 +235,6 @@ export default class UserInfo extends Component {
     //删除一条疾病
     handleDelete = (key) => {
         let _this = this;
-        const load = this.searchRespondent;
         $.ajax({
             type:"Post",
             url:Api+"/visit/delete/deleteOne",
@@ -261,7 +246,7 @@ export default class UserInfo extends Component {
                 }else {
                     message.warning('Delete failed');
                 }
-                load();
+                _this.searchRespondent();
                 // clear();
             },
             async:true
@@ -271,7 +256,7 @@ export default class UserInfo extends Component {
     //批量删除
     handleDeleteAll=()=>{
         const dataKey=[...this.state.selectedRowKeys];
-        const load = this.searchRespondent;
+        let _this = this;
         $.ajax({
             type:"Post",
             url:Api + "/visit/delete/batchDelete",
@@ -288,7 +273,7 @@ export default class UserInfo extends Component {
                 }else {
                     message.warning('Delete failed');
                 }
-                load();
+                _this.searchRespondent();
             },
             async:true
         })
@@ -297,11 +282,8 @@ export default class UserInfo extends Component {
     //添加受访者
     handleAdd = () => {
         let { Respondent } = this.state;
-        const load = this.searchRespondent;
-        // const clear = this.clearRespondent;
-        const visible = this.setModal3Visible;
-
-        visible();
+       let _this = this;
+        this.setModal3Visible();
          $.ajax({
             type:"POST",
             url:Api+"/visit/change/addOrUpdate",
@@ -313,7 +295,7 @@ export default class UserInfo extends Component {
                 }else {
                     message.warning('Add failed');
                 }
-                load();
+                _this.searchRespondent();
                 // clear();
             },
             async:true
