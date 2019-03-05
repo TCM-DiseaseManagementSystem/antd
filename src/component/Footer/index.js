@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { Row, Col } from 'antd';
+import React, { Component } from 'react';
+import './index.less';
 
 export default class Footer extends  Component{
     constructor(props) {
@@ -8,9 +8,9 @@ export default class Footer extends  Component{
 
     render() {
         return (
-            <Fragment>
-                <div> This is Footer！</div>
-            </Fragment>
+            <div className={'footer'}>
+                MIC社区管理系统  Copyright©成都中医药大学数字医药研究所
+            </div>
         )
     }
 }
