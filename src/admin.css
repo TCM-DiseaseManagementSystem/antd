@@ -18,7 +18,7 @@
 }
 
 .content{
-  position: relative;
+  min-height: calc(100vh - 120px);
   padding: 20px;
 }
 
@@ -26,6 +26,7 @@
   height: 100px;
 }
 
-/*.footer {*/
-  /*height: 100px;*/
-/*}*/
+.footer {
+  position: relative;
+  height: 20px;
+}
