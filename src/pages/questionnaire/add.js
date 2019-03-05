@@ -69,10 +69,10 @@ class Edit extends React.Component {
 
     handleAddRadio() {
         const newQuestion = {
-            type: 'radio',
+            type: 0,
             title: '题目',
             score:null,
-            options: [{text: '加分'}, {text: '不加分'}],
+            options: [{text: '加分',value:0}, {text: '不加分',value:0}],
             data: []
         };
         this.setState((prevState) => ({
@@ -83,9 +83,9 @@ class Edit extends React.Component {
 
     handleAddCheckbox() {
         const newQuestion = {
-            type: 'checkbox',
+            type: 1,
             title: '类型二',
-            options: [{text: '选项一'}, {text: '选项二'}, {text: '选项三'}, {text: '选项四'}],
+            options: [{text: '选项一',value:0}, {text: '选项二',value:0}, {text: '选项三',value:0}],
             data: []
         };
         this.setState((prevState) => ({
@@ -115,7 +115,7 @@ class Edit extends React.Component {
     handleCopyQuestion(questionIndex) {
         let { questions } = this.state;
         let copy = Object.assign({}, questions[questionIndex]);
-        if (questions[questionIndex].type !== 'textarea') {
+        if (questions[questionIndex].type !== 1) {
             copy.options = copy.options.slice(0);
         }
         questions.splice(questionIndex + 1, 0, copy);
@@ -132,9 +132,9 @@ class Edit extends React.Component {
         });
     }
 
-    handleOptionChange(e, questionIndex, optionIndex) {
+    handleOptionChange(value, questionIndex, optionIndex) {
         let { questions } = this.state;
-        questions[questionIndex].options[optionIndex].text = e.target.value;
+        questions[questionIndex].options[optionIndex].value =value;
         this.setState({
             questoins: questions
         });
@@ -217,9 +217,25 @@ class Edit extends React.Component {
     onChangeInt=(value,quesIndex)=>{
         let { questions } = this.state;
         questions[quesIndex].score = value;
-        this.setState({
-            questions: questions
-        });
+     if (questions[quesIndex].type===0) {
+         questions[quesIndex].options.map((d,index)=>{
+             if (d.text==='加分'){
+                 d.value=value;
+                 // d.text='加'+value+'分'
+             }else {
+                 d.value=0;
+                 // d.text='加'+0+'分'
+             }
+             this.setState({
+                 questions: questions
+             })
+         })
+         console.log('@questions',questions)
+     }else {
+         this.setState({
+             questions: questions
+         });
+     }
     }
 
     getTitle() {
@@ -252,14 +268,14 @@ class Edit extends React.Component {
         const { TextArea } = Input;
 
         return questions.map((question, questionIndex, array) => {
-            if (question.type === 'radio') {
+            if (question.type === 0) {
                 return (
                     <div className="questionsWrap" style={{ padding: 30 }} key={questionIndex}>
                         <span>Q{questionIndex + 1}</span>
                         <Input value={question.title} style={{ borderStyle: 'none', width: '97%', marginLeft: 3 }} onChange={(e) => this.handleQuestionChange(e, questionIndex)} />
                         <Row style={{float:'right'}}>
                         <span >总分：</span>
-                        <InputNumber style={{marginTop:5}} min={1} max={10} defaultValue={3} onChange={(value)=>this.onChangeInt(value,questionIndex)}/>
+                        <InputNumber style={{marginTop:5}} min={1} max={10} defaultValue={0} onChange={(value)=>this.onChangeInt(value,questionIndex)}/>
                         </Row>
                         <div style={{marginTop:5}}>
                             <Upload {...this.state.props}>
@@ -280,14 +296,14 @@ class Edit extends React.Component {
                         {this.getQuestionOperator(questionIndex, array)}
                     </div>
                 );
-            } else if (question.type === 'checkbox') {
+            } else if (question.type === 0) {
                 return (
                     <div className="questionsWrap" style={{ padding: 30 }} key={questionIndex}>
                         <span>Q{questionIndex + 1}</span>
                         <Input value={question.title} style={{ borderStyle: 'none', width: '97%', marginLeft: 3 }} onChange={(e) => this.handleQuestionChange(e, questionIndex)} />
                         <Row style={{float:'right'}}>
                             <span >总分：</span>
-                            <InputNumber style={{marginTop:5}} min={1} max={10} defaultValue={3} onChange={(value)=>this.onChangeInt(value,questionIndex)}/>
+                            <InputNumber style={{marginTop:5}} min={1} max={10} defaultValue={0} onChange={(value)=>this.onChangeInt(value,questionIndex)}/>
                         </Row>
                         <div style={{marginTop:5}}>
                             <Upload {...this.state.props}>
@@ -301,7 +317,7 @@ class Edit extends React.Component {
                                 <div style={{ margin: '8px 0' }} key={optionIndex}>
                                     <Icon type="close" className="deleteOption" style={{ display: 'inline-block', marginRight: 8 }} onClick={() => this.handleRemoveOption(questionIndex, optionIndex)}/>
                                     <span>加 </span>
-                                    <InputNumber value={option.text} style={{ borderStyle: 'none', width: '10%' }} onChange={(value) => this.handleOptionChange(value, questionIndex, optionIndex)} />
+                                    <InputNumber  style={{ borderStyle: 'none', width: '10%' }} onChange={(value) => this.handleOptionChange(value, questionIndex, optionIndex)} />
                                     <span>分 </span>
                                     {/*<Input value={option.text} style={{ borderStyle: 'none', width: '20%' }} onChange={(e) => this.handleOptionChange(e, questionIndex, optionIndex)} />*/}
                                 </div>
