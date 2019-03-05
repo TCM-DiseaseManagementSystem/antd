@@ -5,6 +5,7 @@ import {
 import {Link} from "react-router-dom";
 import $ from "jquery";
 import './index.less';
+import Api from '../../common/Api';
 const FormItem = Form.Item;
 const Search = Input.Search;
 const RadioGroup = Radio.Group;
@@ -133,7 +134,7 @@ export default class UserInfo extends Component {
                 Id: "",
                 Name: "",
                 Gender: 0,
-                Born: "",
+                Born: new Date().Format("yyyy-MM-dd"),
                 Education: "",
                 MaritalStatus: 0,
                 DwellingStatus: 0,
@@ -213,20 +214,6 @@ export default class UserInfo extends Component {
     };
 
 
-    //显示编辑疾病Modal
-    setModal1Visible = () => {
-        this.setState({
-            modal1Visible: true,
-        });
-    };
-
-    //显示关联病症Modal
-    setModal2Visible = () => {
-        this.setState({
-            modal2Visible: true,
-        });
-    };
-
 
     //显示增加疾病Modal
     setModal3Visible = () => {
@@ -254,10 +241,10 @@ export default class UserInfo extends Component {
 
     //删除一条疾病
     handleDelete = (key) => {
-        const load = this.searchRespondent;
+        let _this = this;
         $.ajax({
             type:"Post",
-            url:"http://localhost:5010/visit/delete/deleteOne",
+            url:Api+"/visit/delete/deleteOne",
             data:{Id:key},
             dataType:"Json",
             success: (data)=> {
@@ -266,7 +253,7 @@ export default class UserInfo extends Component {
                 }else {
                     message.warning('Delete failed');
                 }
-                load();
+                _this.searchRespondent();
                 // clear();
             },
             async:true
@@ -276,10 +263,10 @@ export default class UserInfo extends Component {
     //批量删除
     handleDeleteAll=()=>{
         const dataKey=[...this.state.selectedRowKeys];
-        const load = this.searchRespondent;
+        let _this = this;
         $.ajax({
             type:"Post",
-            url:"http://localhost:5010/visit/delete/batchDelete",
+            url:Api + "/visit/delete/batchDelete",
             data:{"Ids":dataKey},
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
@@ -293,7 +280,7 @@ export default class UserInfo extends Component {
                 }else {
                     message.warning('Delete failed');
                 }
-                load();
+                _this.searchRespondent();
             },
             async:true
         })
@@ -302,14 +289,11 @@ export default class UserInfo extends Component {
     //添加受访者
     handleAdd = () => {
         let { Respondent } = this.state;
-        const load = this.searchRespondent;
-        // const clear = this.clearRespondent;
-        const visible = this.setModal3Visible;
-
-        visible();
+       let _this = this;
+        this.setModal3Visible();
          $.ajax({
             type:"POST",
-            url:"http://localhost:5010/visit/change/addOrUpdate",
+            url:Api+"/visit/change/addOrUpdate",
             data:{...Respondent},
             dataType:"Json",
             success: (data)=> {
@@ -318,7 +302,7 @@ export default class UserInfo extends Component {
                 }else {
                     message.warning('Add failed');
                 }
-                load();
+                _this.searchRespondent();
                 // clear();
             },
             async:true
@@ -343,7 +327,7 @@ export default class UserInfo extends Component {
         };
         $.ajax({
             type:"GET",
-            url:"http://localhost:5010/visit/get/GetByKey",
+            url:Api+ "/visit/get/GetByKey",
             data:{key:key},
             dataType:"Json",
             success:function (data) {
