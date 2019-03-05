@@ -26,22 +26,22 @@ export default class Cognition extends Component{
         })
     }
 
-    renderGroupName = (data,index) =>{
-        // console.log('@data',data)
-    }
-
     renderRow = (data) =>{
         if (data){
             return data.map((item,index) =>{
                 return (
                     <div key={index}>
                         <div className={'cognition-content-name'}>
+                            <div className={'cognition-content-groupname'}>
+                                {(index>0 && data[index-1].TopicInfo.GroupName == item.TopicInfo.GroupName)?
+                                    null:item.TopicInfo.GroupName}
+                            </div>
                             <div className={'cognition-content-detail'}>
                                 <ul className={'cognition-content-detail-title'}>
                                     <li>{item.TopicInfo.Order}.{item.TopicInfo.Title}</li>
                                 </ul>
                                 <ul className={'cognition-content-detail-score'}>
-                                    <li>{item.TopicInfo.TotalScore}</li>
+                                    <li>{item.Score}</li>
                                 </ul>
                             </div>
                         </div>
@@ -51,14 +51,13 @@ export default class Cognition extends Component{
         }
     }
 
-    renderItem = (data) =>{
+    getContent = (data) =>{
         return(
             <div>
                 <div className={'score'}>
-                    <div>总得分</div>
+                    <div>{data.QuestionnaireName}总得分</div>
                     <div>{data.Score}</div>
                 </div>
-                {/*{this.renderGroupName(data[0].Infos)}*/}
                 {this.renderRow(data.Infos)}
             </div>
         )
@@ -68,7 +67,7 @@ export default class Cognition extends Component{
         const { data } = this.state;
         return(
             <div className={'cognition-content'}>
-                {this.renderItem(data)}
+                {this.getContent(data)}
             </div>
         )
     }

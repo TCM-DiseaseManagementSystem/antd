@@ -36,7 +36,7 @@ export default class History extends Component{
                         return(
                             <div className={'detail-content'} key={index}>
                                 <div className={'detail-content-title'}>
-                                    <span className={'detail-content-titles'}>生理数据采集</span>
+                                    <span className={'detail-content-titles'}>{item.GaugeName}</span>
                                     <span className={'detail-content-dels'}>总体正常，部分指标偏高。</span>
                                 </div>
                                 <div className={'detail-content-time'}>{item.CreatedAt}</div>
@@ -115,7 +115,6 @@ export default class History extends Component{
 
     render() {
         const { dataSource } = this.state;
-        console.log('@dataSource',dataSource)
         return (
             <div>
                 {this.getContent(dataSource)}
