@@ -11,6 +11,50 @@ const defaultQuestionnaire = {
     titleEditable: false,
     addAreaVisible: false
 };
+const Data=[
+    {
+        title: 'MIC',
+        TotalScore:13,
+        PassCore:12,
+        Topics:[
+            {
+                name:'选择一个工具',
+                type:0,
+                // score:5,
+                pic:require('../../assets/img/cognition.jpg'),
+                options:[
+                    {
+                        text:'锤子',
+                        value:5
+                    },
+                    {
+                        text:'锅',
+                        value:0
+                    }
+                ]
+            },
+            {
+                title:'选择一个数字',
+                type:1,
+                // score:1,
+                options:[
+                    {
+                        text:'+1',
+                        value:1
+                    },
+                    {
+                        text:'+2',
+                        value:2
+                    },
+                    {
+                        text:'+3',
+                        value:3
+                    }
+                ]
+            }
+        ]
+    }
+]
 
 export  default class Index extends Component{
     constructor(props) {
@@ -93,7 +137,12 @@ export  default class Index extends Component{
                 let prevButton;
                 switch (record.stage) {
                     case '未发布':
-                        prevButton = <Link to="/edit"><Button onClick={() => this.handleEdit(index)}>编辑问卷</Button></Link>
+                        prevButton = <Link to={
+                            {
+                                pathname:'/edit',
+                                state:{data:Data}
+                            }
+                        }><Button onClick={() => this.handleEdit(index)}>编辑问卷</Button></Link>
                         break;
                     case '发布中':
                         prevButton = (
