@@ -3,107 +3,16 @@ import {
     Table, Input, Button, Popconfirm, Form, Modal, Row, Col, Radio
 } from 'antd';
 import './index.less';
+import $ from "jquery";
+import Api from "../../common/Api";
+import {message} from "antd/lib/index";
 const FormItem = Form.Item;
 const Search = Input.Search;
 const RadioGroup = Radio.Group;
 const EditableContext = React.createContext();
 
 
-const data1 = [
-    {
-    key: 1,
-    name: '感冒',
-        py: 'gm'
-},
-    {
-    key: 2,
-    name: '慢性咽炎',
-        py: 'mxyy'
-},
-];
 
-const data2= [
-    {
-        key: 3,
-        name: '感冒',
-        py: 'gm'
-    },
-    {
-        key: 4,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 5,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 6,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 7,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 8,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 9,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 10,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 11,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 12,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 13,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 14,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 15,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 16,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 17,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-    {
-        key: 18,
-        name: '慢性咽炎',
-        py: 'mxyy'
-    },
-];
 
 
 const EditableRow = ({ form, index, ...props }) => (
@@ -215,47 +124,45 @@ export default class Content extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataSource: [{
-                key: '0',
-                name: '头痛',
-                pinyin: 'tt',
-            },
-                {
-                key: '1',
-                name: '慢性咽炎，感冒',
-                pinyin: 'mxyy,gm',
-            },
-                {
-                    key: '2',
-                    name: '慢性咽炎',
-                    pinyin: 'mxyy',
-                }],
-            data1:data1,
-            data2:data2,
-            data3:data2,
+            dataSource: [],
+            data1:[],
+            data2:[],
             count: 2,
             loading: false,
             modal1Visible: false,
             modal2Visible: false,
             modal3Visible: false,
-            nameText: '',
-            pyText: '',
+            disease:{
+                Id:"",
+                Name:"",
+                PinYin:"",
+                Prevalent:false
+            },
+            syndrome:{
+                Id:"",
+                Name:"",
+                PinYin:""
+            },
+            disAndSyn : {
+                DiseaseId:"",
+                SyndromeIds:[]
+            },
             selectedRowKeys: [],
             rowKey:null,
-            value: 1,
+            value: false,
         };
 
         this.columns = [
             {
             title: '疾病名称',
-            dataIndex: 'name',
+            dataIndex: 'Name',
             width: '30%',
             editable: true,
                 align: 'center'
         },
             {
             title: '疾病拼音',
-            dataIndex: 'pinyin',
+            dataIndex: 'PinYin',
                 align: 'center'
         },
             {
@@ -275,21 +182,21 @@ export default class Content extends React.Component {
                                 cancelText='取消'
                                 className={"form-modal1"}
                                 bodyStyle={{ padding: '32px 40px 48px' }}
-                                maskStyle={{backgroundColor:'rgba(0,0,0,.3)'}}
-                                onOk={()=>this.handleOk(this.state.rowKey)}
+                                maskStyle={{backgroundColor:'rgba(0,0,0,.05)'}}
+                                onOk={()=>this.handleOk()}
                                 onCancel={this.handleCancel}
                                  >
                                 <Input placeholder="编辑疾病名称" onChange={this.onChangeNameText}  className={"name-input"}/>
                                 <Input placeholder="编辑疾病拼音" onChange={this.onChangePYText}  className={"py-input"} />
                                 <div className={'is-common'}>
                                     <span className={'common'}>是否是常见病症</span>
-                                    <RadioGroup onChange={this.onChange} value={this.state.value}>
-                                        <Radio value={1}>是</Radio>
-                                        <Radio value={2}>否</Radio>
+                                    <RadioGroup onChange={this.onChange} value={this.state.disease.Prevalent}>
+                                        <Radio value={true}>是</Radio>
+                                        <Radio value={false}>否</Radio>
                                     </RadioGroup>
                                 </div>
                             </Modal>
-                            <Button onClick={this.setModal2Visible} className='btn'>关联证型</Button>
+                            <Button onClick={()=>this.setModal2Visible(record)} className='btn'>关联证型</Button>
                             <Modal
                                 centered
                                 width={1200}
@@ -298,6 +205,7 @@ export default class Content extends React.Component {
                                 cancelText='取消'
                                 visible={this.state.modal2Visible}
                                 destroyOnClose={true}
+                                onOk={this.handRelate}
                                 onCancel={this.handleCancel}
                                 className="form-modal"
                                 maskStyle={{backgroundColor:'rgba(0,0,0,.3)'}}
@@ -315,8 +223,8 @@ export default class Content extends React.Component {
                                             <span>未关联证型</span>
                                             <Search
                                                 placeholder="根据疾病名称或疾病首字母搜索证型"
-                                                onSearch={value => this.search(value)}
-                                                onChange={value=>this.search(value)}
+                                                onSearch={value => this.searchSyndrome(value)}
+                                                // onChange={value=>this.searchSyndrome(value)}
                                                 style={{ width: 300, marginLeft: 180 }}
                                             />
                                         </div>
@@ -333,7 +241,7 @@ export default class Content extends React.Component {
                                         </Col>
                                     </Row>
                                 </Modal>
-                            <Popconfirm title="确认删除?" onConfirm={() => this.handleDelete(record.key)} okText="确认" cancelText="取消">
+                            <Popconfirm title="确认删除?" onConfirm={() => this.handleDelete(record.Id)} okText="确认" cancelText="取消">
                                 <Button>删除</Button>
                             </Popconfirm>
                         </div>
@@ -344,13 +252,11 @@ export default class Content extends React.Component {
         this.columns2=[
             {
             title: '证型名称',
-            dataIndex: 'name',
-            key: 'name',
+            dataIndex: 'Name',
             align: 'center',
         }, {
                 title: '证型拼音',
-                dataIndex: 'py',
-                key: 'py',
+                dataIndex: 'PinYin',
                 align: 'center',
             },{
             title: '操作',
@@ -358,10 +264,9 @@ export default class Content extends React.Component {
             key: 'operate',
             align: 'center',
             render: (text,record)=>(
-                data1.length >= 1
+                this.state.data2.length >= 1
                     ? (
-                        <Popconfirm title="确认添加?" onConfirm={()=>this.addDiease(record)} okText="确认" cancelText="取消">
-                            {console.log('@text',text,"@record",record)}
+                        <Popconfirm title="确认添加?" onConfirm={()=>this.addDisease(record)} okText="确认" cancelText="取消">
                             <Button >添加</Button>
                         </Popconfirm>
                     ):null
@@ -370,13 +275,11 @@ export default class Content extends React.Component {
         this.columns1= [
             {
             title: '证型名称',
-            dataIndex: 'name',
-            key: 'name',
+            dataIndex: 'Name',
             align: 'center',
         },{
                 title: '证型拼音',
-                dataIndex: 'py',
-                key: 'py',
+                dataIndex: 'PinYin',
                 align: 'center',
             },{
             title: '操作',
@@ -384,7 +287,7 @@ export default class Content extends React.Component {
             key: 'operate',
             align: 'center',
             render: (text,record)=>(
-                data1.length >= 1
+                this.state.data1.length >= 1
                     ? (
                         <Popconfirm title="确认删除?" onConfirm={()=>this.handleDeleteDisease(record)} okText="确认" cancelText="取消">
                             <Button>删除</Button>
@@ -393,14 +296,163 @@ export default class Content extends React.Component {
             ),
         }];
 
+        this.init = this.init.bind(this);
+    }
+
+    componentWillMount(){
+        this.searchDisease()
     }
 
     onChange = (e) => {
-        console.log('radio checked', e.target.value);
-        this.setState({
-            value: e.target.value,
+        this.state.disease.Prevalent =  e.target.value;
+        this.setState({disease:this.state.disease})
+    };
+
+    //初始化
+    init = () => {
+        this.state.disease = {
+            Id:"",
+            Name:"",
+            PinYin:"",
+            Prevalent:false
+        };
+        this.state.syndrome = {
+            Id:"",
+            Name:"",
+            PinYin:""
+        };
+    };
+
+    //获取疾病
+    searchDisease = key => {
+        let _this = this;
+        $.ajax({
+            type:"GET",
+            url:Api + "/disease/get/find",
+            data:{key:key},
+            dataType:"Json",
+            success:function (data) {
+                _this.setState({dataSource:data.Data})
+            },
+            async:true
+        })
+    };
+
+    //获取关联证型
+    getRelateSyndrome = Id => {
+        let _this = this;
+        $.ajax({
+            type:"GET",
+            url:Api + "/disease/get/findSyndromeById",
+            data:{DiseaseId:Id},
+            dataType:"Json",
+            success:function (data) {
+                _this.setState({data1:data.Data})
+            },
+            async:true
+        })
+
+    };
+
+    //获取未关联证型
+    getRestSyndrome = Id => {
+        let _this = this;
+        $.ajax({
+            type:"GET",
+            url:Api + "/disease/get/findRestSyndrome",
+            data:{DiseaseId:Id},
+            dataType:"Json",
+            success:function (data) {
+                _this.setState({data2:data.Data})
+            },
+            async:true
+        })
+    };
+
+    //添加关联证型
+    addDisease=(row)=>{
+        let data1=this.state.data1;
+        let data2=this.state.data2;
+        let repeat =true;
+        data1.map(data=>{
+            if (data.Id ===row.Id){
+                repeat =false
+            }
         });
-    }
+        if (!repeat){
+            message.warning("Already Relate");
+            return
+        } else {
+            data1.push(row)
+        }
+
+        data2 = data2.filter(item=>{
+            return item.Id !==row.Id
+        });
+
+        this.setState({
+            data1:data1,
+            data2:data2,
+        });
+    };
+
+    //删除关联证型
+    handleDeleteDisease=(row)=>{
+        let data1 = this.state.data1;
+        let data2 = this.state.data2;
+        data2.push(row);
+        data1 = data1.filter(item => item.Id !== row.Id);
+        this.setState({
+            data1: data1,
+            data2:data2,
+        });
+    };
+
+    handRelate = () => {
+        this.state.disAndSyn.SyndromeIds = [];
+        this.state.data1.map( item => {
+            this.state.disAndSyn.SyndromeIds.push(item.Id)
+        });
+        $.ajax({
+            type:"POST",
+            url:Api + "/disease/change/addSyndrome",
+            data:{...this.state.disAndSyn},
+            dataType:"Json",
+            traditional:true,
+            success:function (data) {
+                if(data.Success){
+                    message.success("Relate Success")
+                }else {
+                    message.warning("Relate Failed")
+                }
+            },
+            async:true
+        });
+        this.handleCancel();
+    };
+
+    //搜索证型
+    searchSyndrome = key => {
+        let data1Text = JSON.stringify(this.state.data1);
+        let set =(data)=> {
+            if(data.length > 0){
+               data = data.filter( item => data1Text.indexOf(item.Id) < 0 )
+            }
+            this.setState({data2:data})
+        };
+        $.ajax({
+            type:"GET",
+            url:Api + "/syndrome/get/find",
+            data:{key:key},
+            dataType:"Json",
+            success:function (data) {
+                if(data.Success){
+                    set(data.Data)
+                }
+            },
+            async:true
+        });
+    };
 
     //选中记录条数
     onSelectChange = (selectedRowKeys) => {
@@ -410,85 +462,53 @@ export default class Content extends React.Component {
 
     //显示编辑疾病Modal
     setModal1Visible = (row) => {
+        let _disease = $.extend(true,{},row);
         this.setState({
             modal1Visible: true,
-            rowKey:row.key,
-            nameText:row.name,
-            pyText:row.pinyin
+            disease : _disease
         });
     };
 
     //显示关联病症Modal
-    setModal2Visible = () => {
+    setModal2Visible = (row) => {
         this.setState({
             modal2Visible: true,
         });
+        this.state.disAndSyn.DiseaseId = row.Id;
+        this.getRelateSyndrome(row.Id);
+        this.getRestSyndrome(row.Id)
     };
-
-    //添加关联证型
-    addDiease=(row)=>{
-        let data3=this.state.data1
-        let data4=this.state.data3
-        let repeat =true
-        data3.map(data=>{
-            if (data.key ===row.key){
-                repeat =false
-            }
-        })
-        data4=data4.filter(item=>{
-            return item.key !==row.key
-        })
-
-         if (repeat){
-             data3.splice(data3.length,0,row)
-         }
-        this.setState({
-            data1:data3,
-            data2:data4,
-            data3:data4
-        })
-
-    }
-
-
-    //删除关联证型
-    handleDeleteDisease=(key)=>{
-        const dataA = [...this.state.data1];
-        const dataB=[...this.state.data3]
-        dataB.splice(0,0,key)
-        this.setState({
-            data1: dataA.filter(item => item.key !== key.key),
-            data2:dataB,
-            data3:dataB
-        });
-        {console.log("@111",this.state.data2)}
-}
 
     //显示增加疾病Modal
     setModal3Visible = () => {
         this.setState({
-            modal3Visible: true,
+            modal3Visible: !this.state.modal3Visible,
         });
     };
 
     //确认编辑、修改、删除
-    handleOk = (row) => {
+    handleOk = () => {
         this.setState({
             modal1Visible: false,
         });
-        let dataSource1=this.state.dataSource
-        dataSource1.map((data,index)=>{
-            if (data.key===row){
-                data.name=this.state.nameText
-                data.pinyin=this.state.pyText
-            }
+        let { disease } = this.state;
+        let _this = this;
+        $.ajax({
+            type:"POST",
+            url:Api+"/disease/change/update",
+            data:{...disease},
+            dataType:"Json",
+            success: (data)=> {
+                if(data.Success){
+                    message.success('Update Success');
+                }else {
+                    message.warning('Update failed');
+                }
+                _this.searchDisease();
+                _this.init();
+            },
+            async:true
         })
-        this.setState({
-            dataSource:dataSource1
-        })
-            // this.state.dataSource[index].name=this.state.nameText
-        // this.state.dataSource[index].pinyin=this.state.pyText
-
     };
 
     //取消编辑、修改、删除
@@ -502,54 +522,83 @@ export default class Content extends React.Component {
 
     //添加疾病名称
     onChangeNameText= (e) => {
-        this.setState({ nameText: e.target.value });
+        this.state.disease.Name = e.target.value;
     };
 
     //添加疾病拼音
     onChangePYText= (e) => {
-        this.setState({ pyText: e.target.value });
+        this.state.disease.PinYin = e.target.value;
     };
 
     //删除一条疾病
     handleDelete = (key) => {
-        const dataSource = [...this.state.dataSource];
-        this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
+        let _this = this;
+        $.ajax({
+            type:"Post",
+            url:Api+"/disease/delete/delete",
+            data:{Id:key},
+            dataType:"Json",
+            success: (data)=> {
+                if(data.Success){
+                    message.success('Delete Success');
+                }else {
+                    message.warning('Delete failed');
+                }
+                _this.searchDisease();
+                _this.init();
+            },
+            async:true
+        })
     };
 
     //批量删除
-    handleDeleteAll=(key)=>{
-        const dataSource = this.state.dataSource;
-        const dataKey=[...this.state.selectedRowKeys]
-        {console.log('@key',dataSource[0])}
-
-            dataKey.map((key)=>{
-                dataSource.map((item,index)=>{
-                    if (key===item.key){
-                        dataSource.splice(index,1)
-                    }
-                })
-            })
-
-        this.setState({
-            dataSource:dataSource
-            })
-    }
+    handleDeleteAll=()=>{
+        const dataKey=[...this.state.selectedRowKeys];
+        let _this = this;
+        $.ajax({
+            type:"Post",
+            url:Api + "/disease/delete/batchDelete",
+            data:{"Ids":dataKey},
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "cache-control": "no-cache",
+            },
+            traditional:true,
+            dataType:"Json",
+            success: (data)=> {
+                if(data.Success){
+                    message.success('Delete Success');
+                }else {
+                    message.warning('Delete failed');
+                }
+                _this.searchDisease();
+                _this.init();
+            },
+            async:true
+        })
+    };
 
     //添加一条疾病
     handleAdd = () => {
-        const { count, dataSource } = this.state;
-        const newData = {
-            key: count,
-            name: this.state.nameText,
-            pinyin: this.state.pyText ,
-        };
-        this.setState({
-            dataSource: [...dataSource, newData],
-            count: count + 1,
-            nameText: '',
-            pyText: '',
-            modal3Visible: false,
-        });
+        let { disease } = this.state;
+        let _this = this;
+        _this.setModal3Visible();
+        $.ajax({
+            type:"POST",
+            url:Api+"/disease/change/add",
+            data:{...disease},
+            dataType:"Json",
+            success: (data)=> {
+                if(data.Success){
+                    message.success('Add Success');
+                }else {
+                    message.warning('Add failed');
+                }
+                _this.searchDisease();
+                _this.init();
+            },
+            async:true
+        })
     };
 
     handleSave = (row) => {
@@ -563,41 +612,9 @@ export default class Content extends React.Component {
         this.setState({ dataSource: newData });
     };
 
-    //搜索
-    search=(value)=>{
-        const dataB=this.state.data2
-        const dataC=this.state.data3
-        // dataB.filter(item=>{
-        //
-        // })
-        let flag=false
-        if (value!==''){
-            dataC.map((data)=>{
-                if (data.name===value) {
-                    flag=true
-                }
-            })
-            if (flag){
-                this.setState({
-                    data2:dataB.filter(item=>{
-                        return item.name === value
-                    })
-                })
-            }else {
-                this.setState({
-                    data2:dataC
-                })
-            }
-        } else {
-            this.setState({
-                data2:dataC
-            })
-        }
-    }
 
     render() {
-        const { dataSource, selectedRowKeys } = this.state;
-        const key = dataSource.key;
+        const { selectedRowKeys } = this.state;
         const hasSelected = selectedRowKeys.length > 0;
         const rowSelection = {
             selectedRowKeys,
@@ -645,22 +662,26 @@ export default class Content extends React.Component {
                         <Input placeholder="请输入疾病拼音" onChange={this.onChangePYText} className={"py-input"} />
                         <div className={'is-common'}>
                             <span className={'common'}>是否是常见病症</span>
-                            <RadioGroup onChange={this.onChange} value={this.state.value}>
-                                <Radio value={1}>是</Radio>
-                                <Radio value={2}>否</Radio>
+                            <RadioGroup onChange={this.onChange} value={this.state.disease.Prevalent}>
+                                <Radio value={true}>是</Radio>
+                                <Radio value={false}>否</Radio>
                             </RadioGroup>
                         </div>
                     </Modal>
-                    <Popconfirm title="确认删除?" onConfirm={() => this.handleDeleteAll(key)} okText="确认" cancelText="取消">
+                    <Popconfirm title="确认删除?" onConfirm={() => this.handleDeleteAll()} okText="确认" cancelText="取消">
                         <Button
                             disabled={!hasSelected}
                         >
                             批量删除
                         </Button>
-                        {console.log("@key",this.state.selectedRowKeys)}
                     </Popconfirm>
                     <span style={{ marginLeft: 8 }}>
             {hasSelected ? `选中 ${selectedRowKeys.length} 条记录` : ''}
+                        <Search
+                            placeholder="根据病名或拼音搜索疾病"
+                            onSearch={value => this.searchDisease(value)}
+                            style={{ width: 400, marginLeft: 900 }}
+                        />
           </span>
                 </div>
                 <Table
@@ -669,6 +690,7 @@ export default class Content extends React.Component {
                     rowClassName={() => 'editable-row'}
                     dataSource={this.state.dataSource}
                     columns={columns}
+                    rowKey = {record => record.Id}
                 />
             </div>
         );
