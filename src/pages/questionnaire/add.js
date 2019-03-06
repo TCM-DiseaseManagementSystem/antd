@@ -95,7 +95,9 @@ class Edit extends React.Component {
             options: [{text: '加分',value:0}, {text: '不加分',value:0}],
             data: []
         };
-        this.state.questions.Topics=this.state.questions.Topics.push(newQuestion)
+
+        console.log('@questions21',this.state.questions.Topics)
+        this.state.questions.Topics.push(newQuestion)
         console.log('@questions22',this.state.questions.Topics)
         this.setState( {
             questions: this.state.questions,
