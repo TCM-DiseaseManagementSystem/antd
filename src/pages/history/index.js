@@ -33,6 +33,8 @@ export default class History extends Component{
             return (
                 <div>
                     {data.GaugeRecords ? data.GaugeRecords.map((item,index) =>{
+                        console.log('@item',item)
+                        console.log('@id',item.Id)
                         return(
                             <div className={'detail-content'} key={index}>
                                 <div className={'detail-content-title'}>
@@ -41,7 +43,12 @@ export default class History extends Component{
                                 </div>
                                 <div className={'detail-content-time'}>{item.CreatedAt}</div>
                                 <div className={'detail-content-btn'}>
-                                    <Link to={'/physicochemical'}>
+                                    <Link to={
+                                        {
+                                            pathname: '/physicochemical',
+                                            state: {Id: item.Id},
+                                        }
+                                    }>
                                         <Button onClick={() => this.handleEdit}>查看</Button>
                                     </Link>
                                 </div>

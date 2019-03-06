@@ -392,6 +392,7 @@ export default class UserInfo extends Component {
                         添加患者
                     </Button>
                     <Modal
+                        centered
                         title='添加患者'
                         okText='添加'
                         cancelText='取消'

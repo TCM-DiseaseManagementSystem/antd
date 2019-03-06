@@ -1,41 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/pages/history/index.js" line="53" />
+    <bookmark url="file://$PROJECT_DIR$/src/pages/history/index.js" line="60" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbfb25a6-bb28-4f34-a777-bc3ffcad0b9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/Footer/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/history/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/history/physicochemical/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Footer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Header/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Header/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Navleft/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Navleft/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Navleft/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Navleft/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/menuConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/menuConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/disease-related/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/disease-related/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/disease-related/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/disease-related/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/cognition/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/cognition/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/cognition/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/cognition/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/diagnosis/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/diagnosis/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/diagnosis/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/diagnosis/index.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/history/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/mmse/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/mmse/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/mmse/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/mmse/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/moca/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/moca/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/moca/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/moca/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/questionnaire/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/questionnaire/add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/questionnaire/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/questionnaire/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/questionnaire/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/questionnaire/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/questionnaire/ques.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/questionnaire/ques.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/history/physicochemical/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/physicochemical/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/userinfo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/userinfo/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,37 +21,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1632153382">
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="js" value="761" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JavaScript" value="761" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="js" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JavaScript" value="3" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/userinfo/index.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/history/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4700">
-              <caret line="193" column="34" selection-start-line="193" selection-start-column="34" selection-end-line="193" selection-end-column="34" />
+            <state relative-caret-position="504">
+              <caret line="52" column="43" lean-forward="true" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/history/physicochemical/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -85,10 +48,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/ques.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/history/cognition/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="351">
+              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -97,42 +60,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/add.js">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="268" lean-forward="true" selection-start-line="268" selection-end-line="268" />
+            <state relative-caret-position="162">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="n#!!block;n#handleTextRequire#0;n#Edit#0" />
-                <element signature="n#!!block;n#handleDatePick#0;n#Edit#0" />
-                <element signature="n#!!block;n#handleSaveQuestionnaire#0;n#Edit#0" />
-                <element signature="e#6711#7338#0" />
-                <element signature="n#!!block;n#getTitle#0;n#Edit#0" />
-                <element signature="n#!!block;n#getAddArea#0;n#Edit#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/edit.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/userinfo/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="326" column="38" lean-forward="true" selection-start-line="326" selection-start-column="38" selection-end-line="326" selection-end-column="38" />
+            <state relative-caret-position="411">
+              <caret line="387" column="16" lean-forward="true" selection-start-line="387" selection-start-column="16" selection-end-line="387" selection-end-column="16" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <element signature="n#!!block;n#handleSaveQuestionnaire#0;n#Edit#0" />
-                <element signature="n#!!block;n#handleReleaseQuestionnaire#0;n#Edit#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="38" column="87" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -149,7 +95,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mockData</find>
       <find>columns</find>
       <find>list</find>
       <find>handleAddCheckbox</find>
@@ -179,6 +124,7 @@
       <find>defaultFileList</find>
       <find>type</find>
       <find>props</find>
+      <find>添加患者</find>
     </findStrings>
     <dirStrings>
       <dir>F:\antd\node_modules</dir>
@@ -198,7 +144,6 @@
         <option value="$PROJECT_DIR$/src/component/Header/index.js" />
         <option value="$PROJECT_DIR$/src/component/Content/index.less" />
         <option value="$PROJECT_DIR$/src/component/Content/index.js" />
-        <option value="$PROJECT_DIR$/src/config/menuConfig.js" />
         <option value="$PROJECT_DIR$/src/pages/nomatch/nomatch.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -222,7 +167,6 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/admin.js" />
         <option value="$PROJECT_DIR$/src/pages/disease-related/index.less" />
-        <option value="$PROJECT_DIR$/src/pages/disease-related/index.js" />
         <option value="$PROJECT_DIR$/src/component/Navleft/index.js" />
         <option value="$PROJECT_DIR$/src/component/Navleft/index.less" />
         <option value="$PROJECT_DIR$/src/pages/history/diagnosis/index.js" />
@@ -231,24 +175,20 @@
         <option value="$PROJECT_DIR$/src/pages/history/moca/index.js" />
         <option value="$PROJECT_DIR$/src/component/Header/index.less" />
         <option value="$PROJECT_DIR$/src/component/Footer/index.less" />
-        <option value="$PROJECT_DIR$/src/pages/userinfo/index.js" />
         <option value="$PROJECT_DIR$/src/admin.css" />
-        <option value="$PROJECT_DIR$/src/pages/history/physicochemical/index.js" />
         <option value="$PROJECT_DIR$/src/route.js" />
         <option value="$PROJECT_DIR$/src/pages/history/index.less" />
-        <option value="$PROJECT_DIR$/src/pages/history/index.js" />
         <option value="$PROJECT_DIR$/src/pages/questionnaire/add.js" />
         <option value="$PROJECT_DIR$/src/pages/questionnaire/index.js" />
         <option value="$PROJECT_DIR$/src/pages/questionnaire/ques.js" />
         <option value="$PROJECT_DIR$/src/pages/questionnaire/edit.js" />
+        <option value="$PROJECT_DIR$/src/config/menuConfig.js" />
+        <option value="$PROJECT_DIR$/src/pages/disease-related/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/userinfo/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/history/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/history/physicochemical/index.js" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="6" />
@@ -264,7 +204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,14 +220,7 @@
               <item name="antd" type="b2602c69:ProjectViewProjectNode" />
               <item name="antd" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="antd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="antd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="antd" type="b2602c69:ProjectViewProjectNode" />
@@ -301,6 +233,14 @@
               <item name="antd" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="history" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="antd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="antd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="history" type="462c0819:PsiDirectoryNode" />
               <item name="cognition" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -308,27 +248,21 @@
               <item name="antd" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="disease-related" type="462c0819:PsiDirectoryNode" />
+              <item name="history" type="462c0819:PsiDirectoryNode" />
+              <item name="physicochemical" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="antd" type="b2602c69:ProjectViewProjectNode" />
               <item name="antd" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="questionnaire" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="antd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="antd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="questionnaire" type="462c0819:PsiDirectoryNode" />
-              <item name="edit" type="462c0819:PsiDirectoryNode" />
+              <item name="userinfo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,6 +343,7 @@
       <workItem from="1551661315793" duration="3660000" />
       <workItem from="1551668102035" duration="17177000" />
       <workItem from="1551747341683" duration="692000" />
+      <workItem from="1551833762357" duration="2647000" />
     </task>
     <task id="LOCAL-00001" summary="新增患者管理和问卷管理页面">
       <created>1550802164447</created>
@@ -452,20 +387,26 @@
       <option name="project" value="LOCAL" />
       <updated>1551692109155</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Merge branch 'master' of https://github.com/TCM-DiseaseManagementSystem/antd">
+      <created>1551776908027</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1551776908027</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219809000" />
+    <option name="totallyTimeSpent" value="223881000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.1436012" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.14330874" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32924107" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32700893" />
@@ -476,7 +417,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32700893" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.22950819" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24330357" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -508,9 +449,6 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新增患者管理和问卷管理页面" />
     <MESSAGE value="新增患者四诊信息采集详情、认知筛查量表得分详情、MMSE评分量表详情和MoCA评分量表详情页面" />
@@ -530,15 +468,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/课程源码/src/components/Header/index.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/popconfirm/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/config-overrides.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/modal/Modal.d.ts" />
     <entry file="file://$PROJECT_DIR$/src/component/Content/index.less" />
     <entry file="file://$PROJECT_DIR$/src/pages/nomatch/nomatch.js">
@@ -552,13 +481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/menuConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -656,13 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/history/cognition/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" selection-start-line="3" selection-end-line="167" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/antd/es/table/interface.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -688,13 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/history/diagnosis/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="81" column="18" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -727,16 +635,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../王雪莉/课程源码/src/utils/utils.js" />
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -759,44 +657,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.js" />
-    <entry file="file://$PROJECT_DIR$/src/pages/userinfo/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4700">
-          <caret line="193" column="34" selection-start-line="193" selection-start-column="34" selection-end-line="193" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/history/index.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/disease-related/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1593">
-          <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/history/physicochemical/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/history/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,13 +671,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="38" column="87" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
         </state>
       </provider>
     </entry>
@@ -856,10 +713,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/history/diagnosis/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/history/physicochemical/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/Api.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/Date.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/menuConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/ques.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="2160">
+          <caret line="83" column="47" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/disease-related/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="419" column="53" lean-forward="true" selection-start-line="419" selection-start-column="53" selection-end-line="419" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/history/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="52" column="43" lean-forward="true" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/userinfo/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="387" column="16" lean-forward="true" selection-start-line="387" selection-start-column="16" selection-end-line="387" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/history/physicochemical/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/history/cognition/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

@@ -11,10 +11,6 @@ const Search = Input.Search;
 const RadioGroup = Radio.Group;
 const EditableContext = React.createContext();
 
-
-
-
-
 const EditableRow = ({ form, index, ...props }) => (
     <EditableContext.Provider value={form}>
         <tr {...props} />
