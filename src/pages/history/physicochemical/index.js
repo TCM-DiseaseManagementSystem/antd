@@ -8,7 +8,9 @@ export default class Physicochemical extends Component{
     constructor(props){
         super(props);
         this.state={
-            data: {}
+            data: {
+                RecordInfos:[]
+            }
         }
     }
 
