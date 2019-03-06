@@ -5,37 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbfb25a6-bb28-4f34-a777-bc3ffcad0b9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/Footer/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/history/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/history/physicochemical/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Footer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Header/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Header/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Navleft/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Navleft/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Navleft/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Navleft/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/disease-related/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/disease-related/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/disease-related/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/disease-related/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/cognition/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/cognition/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/cognition/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/cognition/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/diagnosis/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/diagnosis/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/diagnosis/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/diagnosis/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/mmse/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/mmse/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/mmse/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/mmse/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/moca/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/moca/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/history/moca/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/history/moca/index.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/questionnaire/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/questionnaire/add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/questionnaire/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/questionnaire/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/questionnaire/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/questionnaire/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/questionnaire/ques.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/questionnaire/ques.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/userinfo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/userinfo/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,12 +21,14 @@
     <session id="-1632153382">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="761" />
+          <entry key="js" value="1023" />
+          <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="761" />
+          <entry key="JavaScript" value="1023" />
+          <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -68,6 +41,13 @@
           <entry key="JavaScript" value="3" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.45" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
@@ -75,8 +55,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/userinfo/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4700">
-              <caret line="193" column="34" selection-start-line="193" selection-start-column="34" selection-end-line="193" selection-end-column="34" />
+            <state relative-caret-position="4675">
+              <caret line="194" column="34" selection-start-line="194" selection-start-column="34" selection-end-line="194" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/ques.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -85,30 +77,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/ques.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/add.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="268" lean-forward="true" selection-start-line="268" selection-end-line="268" />
+            <state relative-caret-position="102">
+              <caret line="298" column="39" selection-start-line="298" selection-start-column="39" selection-end-line="298" selection-end-column="39" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="n#!!block;n#handleTextRequire#0;n#Edit#0" />
                 <element signature="n#!!block;n#handleDatePick#0;n#Edit#0" />
                 <element signature="n#!!block;n#handleSaveQuestionnaire#0;n#Edit#0" />
-                <element signature="e#6711#7338#0" />
+                <element signature="n#!!block;n#handleReleaseQuestionnaire#0;n#Edit#0" />
                 <element signature="n#!!block;n#getTitle#0;n#Edit#0" />
-                <element signature="n#!!block;n#getAddArea#0;n#Edit#0" />
               </folding>
             </state>
           </provider>
@@ -117,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/edit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="326" column="38" lean-forward="true" selection-start-line="326" selection-start-column="38" selection-end-line="326" selection-end-column="38" />
+            <state relative-caret-position="2075">
+              <caret line="85" column="24" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="24" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="n#!!block;n#handleSaveQuestionnaire#0;n#Edit#0" />
@@ -131,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/route.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="475">
               <caret line="38" column="87" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
             </state>
           </provider>
@@ -149,17 +128,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mockData</find>
-      <find>columns</find>
-      <find>list</find>
-      <find>handleAddCheckbox</find>
       <find>handleAddTextArea</find>
       <find>handleAddQuestion</find>
-      <find>addAreaVisible</find>
       <find>getAddArea</find>
       <find>getQuestions</find>
-      <find>handleQuestionChange</find>
-      <find>questions</find>
       <find>getTitle</find>
       <find>编辑问卷</find>
       <find>array</find>
@@ -177,8 +149,15 @@
       <find>加分</find>
       <find>handleAddRadio</find>
       <find>defaultFileList</find>
-      <find>type</find>
       <find>props</find>
+      <find>textarea</find>
+      <find>添加</find>
+      <find>addAreaVisible</find>
+      <find>type</find>
+      <find>handleQuestionChange</find>
+      <find>Topics</find>
+      <find>@questions</find>
+      <find>questions</find>
     </findStrings>
     <dirStrings>
       <dir>F:\antd\node_modules</dir>
@@ -237,10 +216,10 @@
         <option value="$PROJECT_DIR$/src/route.js" />
         <option value="$PROJECT_DIR$/src/pages/history/index.less" />
         <option value="$PROJECT_DIR$/src/pages/history/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/questionnaire/add.js" />
         <option value="$PROJECT_DIR$/src/pages/questionnaire/index.js" />
         <option value="$PROJECT_DIR$/src/pages/questionnaire/ques.js" />
         <option value="$PROJECT_DIR$/src/pages/questionnaire/edit.js" />
+        <option value="$PROJECT_DIR$/src/pages/questionnaire/add.js" />
       </list>
     </option>
   </component>
@@ -249,6 +228,14 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="6" />
@@ -264,7 +251,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,6 +315,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,6 +396,7 @@
       <workItem from="1551661315793" duration="3660000" />
       <workItem from="1551668102035" duration="17177000" />
       <workItem from="1551747341683" duration="692000" />
+      <workItem from="1551834951365" duration="2671000" />
     </task>
     <task id="LOCAL-00001" summary="新增患者管理和问卷管理页面">
       <created>1550802164447</created>
@@ -452,11 +440,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551692109155</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="类型2修改">
+      <created>1551777115649</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1551777115649</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219809000" />
+    <option name="totallyTimeSpent" value="226938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -517,7 +512,8 @@
     <MESSAGE value="合并杨佳丽代码" />
     <MESSAGE value="根据后台表结构模拟四诊信息、MMSE评分量表、认知筛查量表和MoCA评分量表数据，修改页面样式" />
     <MESSAGE value="Merge branch 'master' of https://github.com/TCM-DiseaseManagementSystem/antd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/TCM-DiseaseManagementSystem/antd" />
+    <MESSAGE value="类型2修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="类型2修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -731,9 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,16 +752,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.js" />
-    <entry file="file://$PROJECT_DIR$/src/pages/userinfo/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4700">
-          <caret line="193" column="34" selection-start-line="193" selection-start-column="34" selection-end-line="193" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/history/index.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -810,13 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="38" column="87" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -828,10 +804,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/userinfo/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4675">
+          <caret line="194" column="34" selection-start-line="194" selection-start-column="34" selection-end-line="194" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/ques.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/edit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="326" column="38" lean-forward="true" selection-start-line="326" selection-start-column="38" selection-end-line="326" selection-end-column="38" />
+        <state relative-caret-position="2075">
+          <caret line="85" column="24" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="24" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
             <element signature="n#!!block;n#handleSaveQuestionnaire#0;n#Edit#0" />
@@ -840,28 +836,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="38" column="87" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/add.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="268" lean-forward="true" selection-start-line="268" selection-end-line="268" />
+        <state relative-caret-position="102">
+          <caret line="298" column="39" selection-start-line="298" selection-start-column="39" selection-end-line="298" selection-end-column="39" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="n#!!block;n#handleTextRequire#0;n#Edit#0" />
             <element signature="n#!!block;n#handleDatePick#0;n#Edit#0" />
             <element signature="n#!!block;n#handleSaveQuestionnaire#0;n#Edit#0" />
-            <element signature="e#6711#7338#0" />
+            <element signature="n#!!block;n#handleReleaseQuestionnaire#0;n#Edit#0" />
             <element signature="n#!!block;n#getTitle#0;n#Edit#0" />
-            <element signature="n#!!block;n#getAddArea#0;n#Edit#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/questionnaire/ques.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
