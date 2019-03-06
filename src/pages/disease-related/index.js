@@ -347,7 +347,6 @@ export default class Content extends React.Component {
             },
             async:true
         })
-
     };
 
     //获取未关联证型
@@ -467,12 +466,11 @@ export default class Content extends React.Component {
 
     //显示关联病症Modal
     setModal2Visible = (row) => {
+        this.state.disAndSyn.DiseaseId = row.Id;
         this.setState({
             modal2Visible: true,
         });
-        this.state.disAndSyn.DiseaseId = row.Id;
-        this.getRelateSyndrome(row.Id);
-        this.getRestSyndrome(row.Id)
+
     };
 
     //显示增加疾病Modal
@@ -607,7 +605,6 @@ export default class Content extends React.Component {
         });
         this.setState({ dataSource: newData });
     };
-
 
     render() {
         const { selectedRowKeys } = this.state;

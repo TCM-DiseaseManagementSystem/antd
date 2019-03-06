@@ -408,17 +408,13 @@ export default class UserInfo extends Component {
                             <Radio value={1}>男</Radio>
                             <Radio value={0}>女</Radio>
                         </RadioGroup>
-                        <DatePicker placeholder={"请选择患者出生日期"}
-                                    onChange={value => Respondent.Born = value.format("YYYY-MM-DD")}
-                        />
+                        <DatePicker placeholder={"请选择患者出生日期"} onChange={value => Respondent.Born = value.format("YYYY-MM-DD")} style={{paddingBottom: 5}} />
                         <Input placeholder="请输入患者教育程度" onChange={value => Respondent.Education = value.target.value} className={"name-input"} />
-                        <Select defaultValue={0} style={{ width: 120 }} placeholder={"请选择患者婚姻状况"}
-                                onChange={value => Respondent.MaritalStatus = value}>
+                        <Select defaultValue={0} style={{ width: 120 }} placeholder={"请选择患者婚姻状况"} onChange={value => Respondent.MaritalStatus = value}  style={{ paddingRight:  20, paddingBottom: 10 }}>
                             <Option value={0}>未婚</Option>
                             <Option value={1}>已婚</Option>
                         </Select>
-                        <Select defaultValue={0} style={{ width: 120 }} placeholder={"请选择患者居住状况"}
-                                onChange={value => Respondent.DwellingStatus = value}>
+                        <Select defaultValue={0} style={{ width: 120 }} placeholder={"请选择患者居住状况"} onChange={value => Respondent.DwellingStatus = value} style={{ paddingBottom: 10 }}>
                             <Option value={0}>独自居住</Option>
                             <Option value={1}>夫妻同居</Option>
                             <Option value={2}>子女同居</Option>

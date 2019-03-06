@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
+import {Link} from "react-router-dom";
 import './index.less';
 
 export default class Header extends  Component{
@@ -22,8 +23,13 @@ export default class Header extends  Component{
                            首页
                         </Col>
                         <Col span={20} className="welcome">
-                            <span>欢迎，{this.state.userName}</span>
-                            <a href="#">退出</a>
+                            <span style={{ paddingRight: 20 }}>欢迎，{this.state.userName}</span>
+                            <Link to='/login'>
+                                <Button>登录</Button>
+                            </Link>
+                            <Link to='/register'>
+                                <Button>注册</Button>
+                            </Link>
                         </Col>
                     </Row>
                 </div>

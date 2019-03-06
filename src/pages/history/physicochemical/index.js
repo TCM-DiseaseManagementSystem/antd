@@ -8,7 +8,9 @@ export default class Physicochemical extends Component{
     constructor(props){
         super(props);
         this.state={
-            data: {}
+            data: {
+                RecordInfos: []
+            }
         }
     }
 
@@ -30,7 +32,6 @@ export default class Physicochemical extends Component{
     }
 
     getContent = (data) =>{
-        console.log('@123',data)
         if (data) {
             return data.RecordInfos.map((item,index) =>{
                 return(
@@ -52,7 +53,6 @@ export default class Physicochemical extends Component{
 
     render() {
         const { data } = this.state;
-        console.log('@data',data)
         return(
             <div className={'physicochemical-content'}>
                 <h1>理化检查详情</h1>
