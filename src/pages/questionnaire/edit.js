@@ -171,7 +171,7 @@ class Edit extends React.Component {
     handleCopyQuestion(questionIndex) {
         let { questions } = this.state;
         let copy = Object.assign({}, questions[questionIndex]);
-        if (questions[questionIndex].type !== 'textarea') {
+        if (questions[questionIndex].type !== 1) {
             copy.options = copy.options.slice(0);
         }
         questions.splice(questionIndex + 1, 0, copy);

@@ -30,7 +30,27 @@ class Edit extends React.Component {
         this.state = {
             titleEditable:false,
             addAreaVisible:false,
-            questions:[],
+            questions:{
+                Id:         null,
+                Name:       null,
+                TotalScore: null,
+                PassScore:  null,
+                Topics:     [
+                    // {
+                    //     // Id:              null,
+                    //     // QuestionnaireId: null,
+                    //     // Title:           null,
+                    //     // Image :          null,
+                    //     // Order:           null,
+                    //     // GroupName:       null,
+                    //     // TotalScore:      null,
+                    //     // Type:            null,
+                    //     // CreatedAt:       null /* 2018-07-23 10:04:30 */
+                    // }
+                ],
+                CreatedAt:  null,
+            }
+            ,
             date:null,
             title:'这里是标题',
             fileList:[],
@@ -75,10 +95,12 @@ class Edit extends React.Component {
             options: [{text: '加分',value:0}, {text: '不加分',value:0}],
             data: []
         };
-        this.setState((prevState) => ({
-            questions: prevState.questions.concat(newQuestion),
+        this.state.questions.Topics=this.state.questions.Topics.push(newQuestion)
+        console.log('@questions22',this.state.questions.Topics)
+        this.setState( {
+            questions: this.state.questions,
             addAreaVisible: false
-        }));
+        });
     }
 
     handleAddCheckbox() {
@@ -95,12 +117,19 @@ class Edit extends React.Component {
     }
 
 
-    handleQuestionChange(e, questionIndex) {
+    handleQuestionChange(e, questionIndex,int) {
         let { questions } = this.state;
-        questions[questionIndex].title = e.target.value;
-        this.setState({
-            questions: questions
-        });
+        if (int===1) {
+            questions.Topics[questionIndex].Title = e.target.value;
+            this.setState({
+                questions: questions
+            });
+        }else {
+            questions.Topics[questionIndex].GroupName = e.target.value;
+            this.setState({
+                questions: questions
+            });
+        }
     }
 
     handleShiftQuestion(questionIndex, num) {
@@ -230,7 +259,6 @@ class Edit extends React.Component {
                  questions: questions
              })
          })
-         console.log('@questions',questions)
      }else {
          this.setState({
              questions: questions
@@ -266,73 +294,75 @@ class Edit extends React.Component {
     getQuestions() {
         let questions = this.state.questions;
         const { TextArea } = Input;
+     console.log('@questions',questions.Topics)
+            return questions.Topics.map((question, questionIndex, array) => {
+                if (question.type === 0) {
+                    return (
+                        <div className="questionsWrap" style={{ padding: 30 }} key={questionIndex}>
+                            <span>Q{questionIndex + 1}</span>
+                            <Input value={question.GroupName} style={{ borderStyle: 'none', width: '97%', marginLeft: 3 }} onChange={(e) => this.handleQuestionChange(e, questionIndex,2)}></Input>
+                            <Input value={question.Title} style={{ borderStyle: 'none', width: '97%', marginLeft: 3 }} onChange={(e) => this.handleQuestionChange(e, questionIndex,1)} />
+                            <Row style={{float:'right'}}>
+                                <span >总分：</span>
+                                <InputNumber style={{marginTop:5}} min={1} max={10} defaultValue={0} onChange={(value)=>this.onChangeInt(value,questionIndex)}/>
+                            </Row>
+                            <div style={{marginTop:5}}>
+                                <Upload {...this.state.props}>
+                                    <Button>
+                                        <Icon type="upload" /> Upload
+                                    </Button>
+                                </Upload>
+                            </div>
+                            {question.options.map((option,optionIndex) => {
+                                return (
+                                    <div style={{ margin: '8px 0' }} key={optionIndex}>
+                                        {/*<Icon type="close" className="deleteOption" style={{ display: 'inline-block', marginRight: 8 }} onClick={() => this.handleRemoveOption(questionIndex, optionIndex)}/>*/}
+                                        <Input disabled={true} value={option.text} style={{ borderStyle: 'none', width: '20%' }} />
+                                    </div>
+                                );
+                            })}
+                            {/*<div className="addOption" style={{ width: '20%', height: 28, margin: '8px 20px' }} onClick={() => this.handleAddOption(questionIndex)}>添加新选项</div>*/}
+                            {this.getQuestionOperator(questionIndex, array)}
+                        </div>
+                    );
+                } else if (question.type === 1) {
+                    return (
+                        <div className="questionsWrap" style={{ padding: 30 }} key={questionIndex}>
+                            <span>Q{questionIndex + 1}</span>
+                            <Input value={question.title} style={{ borderStyle: 'none', width: '97%', marginLeft: 3 }} onChange={(e) => this.handleQuestionChange(e, questionIndex)} />
+                            <Row style={{float:'right'}}>
+                                <span >总分：</span>
+                                <InputNumber style={{marginTop:5}} min={1} max={10} defaultValue={0} onChange={(value)=>this.onChangeInt(value,questionIndex)}/>
+                            </Row>
+                            <div style={{marginTop:5}}>
+                                <Upload {...this.state.props}>
+                                    <Button>
+                                        <Icon type="upload" /> Upload
+                                    </Button>
+                                </Upload>
+                            </div>
+                            {question.options.map((option,optionIndex) => {
+                                return (
+                                    <div style={{ margin: '8px 0' }} key={optionIndex}>
+                                        {/*<Icon type="close" className="deleteOption" style={{ display: 'inline-block', marginRight: 8 }} onClick={() => this.handleRemoveOption(questionIndex, optionIndex)}/>*/}
+                                        <span>加 </span>
+                                        <InputNumber  style={{ borderStyle: 'none', width: '10%' }} onChange={(value) => this.handleOptionChange(value, questionIndex, optionIndex)} />
+                                        <span>分 </span>
+                                        {/*<Input value={option.text} style={{ borderStyle: 'none', width: '20%' }} onChange={(e) => this.handleOptionChange(e, questionIndex, optionIndex)} />*/}
+                                    </div>
+                                );
+                            })}
+                            <Button className="addOption" style={{ width: '20%', height: 28, margin: '8px 20px' }} onClick={() => this.handleAddOption(questionIndex)}>添加新选项</Button>
+                            {this.getQuestionOperator(questionIndex, array)}
+                        </div>
+                    );
+                }
+                else {
+                    return null;
+                }
+            })
+        }
 
-        return questions.map((question, questionIndex, array) => {
-            if (question.type === 0) {
-                return (
-                    <div className="questionsWrap" style={{ padding: 30 }} key={questionIndex}>
-                        <span>Q{questionIndex + 1}</span>
-                        <Input value={question.title} style={{ borderStyle: 'none', width: '97%', marginLeft: 3 }} onChange={(e) => this.handleQuestionChange(e, questionIndex)} />
-                        <Row style={{float:'right'}}>
-                        <span >总分：</span>
-                        <InputNumber style={{marginTop:5}} min={1} max={10} defaultValue={0} onChange={(value)=>this.onChangeInt(value,questionIndex)}/>
-                        </Row>
-                        <div style={{marginTop:5}}>
-                            <Upload {...this.state.props}>
-                                <Button>
-                            <Icon type="upload" /> Upload
-                        </Button>
-                            </Upload>
-                        </div>
-                        {question.options.map((option,optionIndex) => {
-                            return (
-                                <div style={{ margin: '8px 0' }} key={optionIndex}>
-                                    <Icon type="close" className="deleteOption" style={{ display: 'inline-block', marginRight: 8 }} onClick={() => this.handleRemoveOption(questionIndex, optionIndex)}/>
-                                    <Input disabled={true} value={option.text} style={{ borderStyle: 'none', width: '20%' }} />
-                                </div>
-                            );
-                        })}
-                        {/*<div className="addOption" style={{ width: '20%', height: 28, margin: '8px 20px' }} onClick={() => this.handleAddOption(questionIndex)}>添加新选项</div>*/}
-                        {this.getQuestionOperator(questionIndex, array)}
-                    </div>
-                );
-            } else if (question.type === 0) {
-                return (
-                    <div className="questionsWrap" style={{ padding: 30 }} key={questionIndex}>
-                        <span>Q{questionIndex + 1}</span>
-                        <Input value={question.title} style={{ borderStyle: 'none', width: '97%', marginLeft: 3 }} onChange={(e) => this.handleQuestionChange(e, questionIndex)} />
-                        <Row style={{float:'right'}}>
-                            <span >总分：</span>
-                            <InputNumber style={{marginTop:5}} min={1} max={10} defaultValue={0} onChange={(value)=>this.onChangeInt(value,questionIndex)}/>
-                        </Row>
-                        <div style={{marginTop:5}}>
-                            <Upload {...this.state.props}>
-                                <Button>
-                                    <Icon type="upload" /> Upload
-                                </Button>
-                            </Upload>
-                        </div>
-                        {question.options.map((option,optionIndex) => {
-                            return (
-                                <div style={{ margin: '8px 0' }} key={optionIndex}>
-                                    <Icon type="close" className="deleteOption" style={{ display: 'inline-block', marginRight: 8 }} onClick={() => this.handleRemoveOption(questionIndex, optionIndex)}/>
-                                    <span>加 </span>
-                                    <InputNumber  style={{ borderStyle: 'none', width: '10%' }} onChange={(value) => this.handleOptionChange(value, questionIndex, optionIndex)} />
-                                    <span>分 </span>
-                                    {/*<Input value={option.text} style={{ borderStyle: 'none', width: '20%' }} onChange={(e) => this.handleOptionChange(e, questionIndex, optionIndex)} />*/}
-                                </div>
-                            );
-                        })}
-                        <Button className="addOption" style={{ width: '20%', height: 28, margin: '8px 20px' }} onClick={() => this.handleAddOption(questionIndex)}>添加新选项</Button>
-                        {this.getQuestionOperator(questionIndex, array)}
-                    </div>
-                );
-            }
-            else {
-                return null;
-            }
-        })
-    }
 
     getQuestionOperator(questionIndex, array) {
         return (
